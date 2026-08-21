@@ -1,0 +1,335 @@
+[
+  {
+    "id": 1,
+    "nom": "Poulet DG",
+    "categorie": "Plat principal",
+    "origine": "Camerounaise",
+    "image": "https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=600",
+    "tempsPreparation": 60,
+    "ingredients": [
+      { "nom": "Poulet", "quantite": 1, "unite": "kg" },
+      { "nom": "Plantain", "quantite": 4, "unite": "pièces" },
+      { "nom": "Carotte", "quantite": 2, "unite": "pièces" },
+      { "nom": "Poivron", "quantite": 2, "unite": "pièces" },
+      { "nom": "Oignon", "quantite": 2, "unite": "pièces" },
+      { "nom": "Ail", "quantite": 3, "unite": "gousses" },
+      { "nom": "Huile", "quantite": 100, "unite": "ml" }
+    ],
+    "instructions": [
+      "Couper le poulet en morceaux et le faire mariner avec sel, ail et gingembre.",
+      "Faire frire les morceaux de plantain jusqu'à coloration dorée.",
+      "Faire dorer le poulet dans l'huile chaude.",
+      "Faire revenir oignons, carottes et poivrons.",
+      "Mélanger le poulet, les légumes et le plantain frit, laisser mijoter 10 minutes."
+    ]
+  },
+  {
+    "id": 2,
+    "nom": "Ndolé aux crevettes",
+    "categorie": "Plat principal",
+    "origine": "Camerounaise",
+    "image": "https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=600",
+    "tempsPreparation": 90,
+    "ingredients": [
+      { "nom": "Ndolé", "quantite": 500, "unite": "g" },
+      { "nom": "Crevettes", "quantite": 300, "unite": "g" },
+      { "nom": "Arachide", "quantite": 250, "unite": "g" },
+      { "nom": "Boeuf", "quantite": 400, "unite": "g" },
+      { "nom": "Oignon", "quantite": 1, "unite": "pièce" },
+      { "nom": "Huile", "quantite": 80, "unite": "ml" }
+    ],
+    "instructions": [
+      "Faire bouillir les feuilles de ndolé pour retirer l'amertume, rincer plusieurs fois.",
+      "Mixer les arachides avec un peu d'eau pour obtenir une pâte.",
+      "Faire cuire la viande de boeuf jusqu'à tendreté.",
+      "Faire revenir l'oignon, ajouter la pâte d'arachide et laisser cuire.",
+      "Ajouter le ndolé, les crevettes et la viande, laisser mijoter 20 minutes."
+    ]
+  },
+  {
+    "id": 3,
+    "nom": "Riz sauté aux légumes",
+    "categorie": "Plat principal",
+    "origine": "Asiatique",
+    "image": "https://images.unsplash.com/photo-1512058564366-18510be2db19?w=600",
+    "tempsPreparation": 25,
+    "ingredients": [
+      { "nom": "Riz", "quantite": 300, "unite": "g" },
+      { "nom": "Carotte", "quantite": 1, "unite": "pièce" },
+      { "nom": "Poivron", "quantite": 1, "unite": "pièce" },
+      { "nom": "Oignon", "quantite": 1, "unite": "pièce" },
+      { "nom": "Oeuf", "quantite": 2, "unite": "pièces" },
+      { "nom": "Huile", "quantite": 30, "unite": "ml" }
+    ],
+    "instructions": [
+      "Cuire le riz et laisser refroidir (idéalement la veille).",
+      "Couper tous les légumes en petits dés.",
+      "Faire revenir les légumes dans l'huile chaude quelques minutes.",
+      "Pousser les légumes sur le côté, casser les oeufs et brouiller.",
+      "Ajouter le riz, mélanger le tout et assaisonner."
+    ]
+  },
+  {
+    "id": 4,
+    "nom": "Salade César",
+    "categorie": "Entrée",
+    "origine": "Américaine",
+    "image": "https://images.unsplash.com/photo-1550304943-4f24f54ddde9?w=600",
+    "tempsPreparation": 15,
+    "ingredients": [
+      { "nom": "Laitue", "quantite": 1, "unite": "pièce" },
+      { "nom": "Poulet", "quantite": 200, "unite": "g" },
+      { "nom": "Fromage", "quantite": 50, "unite": "g" },
+      { "nom": "Pain", "quantite": 2, "unite": "tranches" },
+      { "nom": "Huile", "quantite": 20, "unite": "ml" }
+    ],
+    "instructions": [
+      "Griller le poulet et le couper en lamelles.",
+      "Couper le pain en cubes et le faire dorer à la poêle pour les croûtons.",
+      "Laver et couper la laitue.",
+      "Mélanger tous les ingrédients avec la sauce César.",
+      "Râper le fromage par-dessus avant de servir."
+    ]
+  },
+  {
+    "id": 5,
+    "nom": "Soupe de poisson",
+    "categorie": "Entrée",
+    "origine": "Camerounaise",
+    "image": "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600",
+    "tempsPreparation": 40,
+    "ingredients": [
+      { "nom": "Poisson", "quantite": 500, "unite": "g" },
+      { "nom": "Tomate", "quantite": 3, "unite": "pièces" },
+      { "nom": "Oignon", "quantite": 1, "unite": "pièce" },
+      { "nom": "Piment", "quantite": 1, "unite": "pièce" },
+      { "nom": "Gingembre", "quantite": 1, "unite": "morceau" }
+    ],
+    "instructions": [
+      "Nettoyer et couper le poisson en morceaux.",
+      "Faire revenir oignon, tomate et gingembre.",
+      "Ajouter de l'eau et porter à ébullition.",
+      "Ajouter le poisson et le piment, laisser mijoter 20 minutes.",
+      "Rectifier l'assaisonnement avant de servir."
+    ]
+  },
+  {
+    "id": 6,
+    "nom": "Pâtes à la bolognaise",
+    "categorie": "Plat principal",
+    "origine": "Italienne",
+    "image": "https://images.unsplash.com/photo-1608897013039-887f21d8c804?w=600",
+    "tempsPreparation": 35,
+    "ingredients": [
+      { "nom": "Pâtes", "quantite": 400, "unite": "g" },
+      { "nom": "Boeuf", "quantite": 400, "unite": "g" },
+      { "nom": "Tomate", "quantite": 4, "unite": "pièces" },
+      { "nom": "Oignon", "quantite": 1, "unite": "pièce" },
+      { "nom": "Ail", "quantite": 2, "unite": "gousses" },
+      { "nom": "Fromage", "quantite": 50, "unite": "g" }
+    ],
+    "instructions": [
+      "Faire revenir l'oignon et l'ail dans l'huile.",
+      "Ajouter la viande hachée et faire dorer.",
+      "Ajouter les tomates concassées, laisser mijoter 20 minutes.",
+      "Cuire les pâtes selon les instructions du paquet.",
+      "Mélanger la sauce aux pâtes et servir avec du fromage râpé."
+    ]
+  },
+  {
+    "id": 7,
+    "nom": "Tacos au poulet",
+    "categorie": "Plat principal",
+    "origine": "Mexicaine",
+    "image": "https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?w=600",
+    "tempsPreparation": 30,
+    "ingredients": [
+      { "nom": "Poulet", "quantite": 400, "unite": "g" },
+      { "nom": "Tortilla", "quantite": 8, "unite": "pièces" },
+      { "nom": "Tomate", "quantite": 2, "unite": "pièces" },
+      { "nom": "Oignon", "quantite": 1, "unite": "pièce" },
+      { "nom": "Fromage", "quantite": 100, "unite": "g" },
+      { "nom": "Piment", "quantite": 1, "unite": "pièce" }
+    ],
+    "instructions": [
+      "Assaisonner et cuire le poulet coupé en lamelles.",
+      "Préparer la garniture : tomate, oignon et piment émincés.",
+      "Réchauffer les tortillas.",
+      "Garnir chaque tortilla de poulet, garniture et fromage râpé.",
+      "Servir immédiatement avec une sauce au choix."
+    ]
+  },
+  {
+    "id": 8,
+    "nom": "Beignets haricots",
+    "categorie": "Petit-déjeuner",
+    "origine": "Camerounaise",
+    "image": "https://images.unsplash.com/photo-1600628421066-f6bda6a7b976?w=600",
+    "tempsPreparation": 45,
+    "ingredients": [
+      { "nom": "Farine", "quantite": 300, "unite": "g" },
+      { "nom": "Haricot", "quantite": 200, "unite": "g" },
+      { "nom": "Oeuf", "quantite": 1, "unite": "pièce" },
+      { "nom": "Huile", "quantite": 200, "unite": "ml" },
+      { "nom": "Sel", "quantite": 5, "unite": "g" }
+    ],
+    "instructions": [
+      "Faire tremper les haricots puis les mixer avec un peu d'eau.",
+      "Battre la pâte de haricot jusqu'à obtenir une texture mousseuse.",
+      "Assaisonner avec le sel.",
+      "Faire chauffer l'huile et frire des cuillères de pâte jusqu'à dorure.",
+      "Égoutter sur du papier absorbant avant de servir."
+    ]
+  },
+  {
+    "id": 9,
+    "nom": "Omelette aux légumes",
+    "categorie": "Petit-déjeuner",
+    "origine": "Française",
+    "image": "https://images.unsplash.com/photo-1510693206972-df098062cb71?w=600",
+    "tempsPreparation": 15,
+    "ingredients": [
+      { "nom": "Oeuf", "quantite": 3, "unite": "pièces" },
+      { "nom": "Poivron", "quantite": 1, "unite": "pièce" },
+      { "nom": "Oignon", "quantite": 1, "unite": "pièce" },
+      { "nom": "Fromage", "quantite": 30, "unite": "g" },
+      { "nom": "Huile", "quantite": 10, "unite": "ml" }
+    ],
+    "instructions": [
+      "Battre les oeufs avec sel et poivre.",
+      "Faire revenir les légumes coupés en petits dés.",
+      "Verser les oeufs battus sur les légumes.",
+      "Ajouter le fromage râpé.",
+      "Plier l'omelette une fois cuite et servir chaud."
+    ]
+  },
+  {
+    "id": 10,
+    "nom": "Curry de légumes",
+    "categorie": "Plat principal",
+    "origine": "Indienne",
+    "image": "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=600",
+    "tempsPreparation": 35,
+    "ingredients": [
+      { "nom": "Pomme de terre", "quantite": 3, "unite": "pièces" },
+      { "nom": "Carotte", "quantite": 2, "unite": "pièces" },
+      { "nom": "Tomate", "quantite": 2, "unite": "pièces" },
+      { "nom": "Oignon", "quantite": 1, "unite": "pièce" },
+      { "nom": "Lait", "quantite": 200, "unite": "ml" },
+      { "nom": "Gingembre", "quantite": 1, "unite": "morceau" }
+    ],
+    "instructions": [
+      "Couper tous les légumes en morceaux.",
+      "Faire revenir l'oignon et le gingembre dans l'huile.",
+      "Ajouter les épices à curry et faire torréfier légèrement.",
+      "Ajouter les légumes et le lait de coco, laisser mijoter 20 minutes.",
+      "Servir avec du riz blanc."
+    ]
+  },
+  {
+    "id": 11,
+    "nom": "Gâteau au chocolat",
+    "categorie": "Dessert",
+    "origine": "Française",
+    "image": "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=600",
+    "tempsPreparation": 50,
+    "ingredients": [
+      { "nom": "Farine", "quantite": 200, "unite": "g" },
+      { "nom": "Oeuf", "quantite": 4, "unite": "pièces" },
+      { "nom": "Chocolat", "quantite": 200, "unite": "g" },
+      { "nom": "Beurre", "quantite": 150, "unite": "g" },
+      { "nom": "Sucre", "quantite": 150, "unite": "g" }
+    ],
+    "instructions": [
+      "Faire fondre le chocolat et le beurre au bain-marie.",
+      "Battre les oeufs avec le sucre jusqu'à blanchiment.",
+      "Incorporer le mélange chocolat-beurre.",
+      "Ajouter la farine tamisée et mélanger délicatement.",
+      "Cuire au four 25 minutes à 180°C."
+    ]
+  },
+  {
+    "id": 12,
+    "nom": "Salade de fruits",
+    "categorie": "Dessert",
+    "origine": "Internationale",
+    "image": "https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea?w=600",
+    "tempsPreparation": 10,
+    "ingredients": [
+      { "nom": "Ananas", "quantite": 0.5, "unite": "pièce" },
+      { "nom": "Banane", "quantite": 2, "unite": "pièces" },
+      { "nom": "Mangue", "quantite": 1, "unite": "pièce" },
+      { "nom": "Citron", "quantite": 1, "unite": "pièce" }
+    ],
+    "instructions": [
+      "Couper tous les fruits en morceaux.",
+      "Mélanger les fruits dans un saladier.",
+      "Presser le citron par-dessus pour éviter l'oxydation.",
+      "Réfrigérer 30 minutes avant de servir."
+    ]
+  },
+  {
+    "id": 13,
+    "nom": "Beignets de plantain",
+    "categorie": "Dessert",
+    "origine": "Camerounaise",
+    "image": "https://images.unsplash.com/photo-1587314168485-3236d6710814?w=600",
+    "tempsPreparation": 20,
+    "ingredients": [
+      { "nom": "Plantain", "quantite": 4, "unite": "pièces" },
+      { "nom": "Farine", "quantite": 100, "unite": "g" },
+      { "nom": "Sucre", "quantite": 30, "unite": "g" },
+      { "nom": "Huile", "quantite": 200, "unite": "ml" }
+    ],
+    "instructions": [
+      "Écraser les plantains mûrs à la fourchette.",
+      "Mélanger avec la farine et le sucre pour obtenir une pâte.",
+      "Faire chauffer l'huile.",
+      "Frire des cuillères de pâte jusqu'à coloration dorée.",
+      "Égoutter et servir chaud."
+    ]
+  },
+  {
+    "id": 14,
+    "nom": "Sandwich club",
+    "categorie": "Déjeuner rapide",
+    "origine": "Américaine",
+    "image": "https://images.unsplash.com/photo-1553909489-cd47e0907980?w=600",
+    "tempsPreparation": 15,
+    "ingredients": [
+      { "nom": "Pain", "quantite": 3, "unite": "tranches" },
+      { "nom": "Poulet", "quantite": 100, "unite": "g" },
+      { "nom": "Fromage", "quantite": 30, "unite": "g" },
+      { "nom": "Tomate", "quantite": 1, "unite": "pièce" },
+      { "nom": "Laitue", "quantite": 2, "unite": "feuilles" }
+    ],
+    "instructions": [
+      "Griller légèrement les tranches de pain.",
+      "Disposer le poulet, la laitue et la tomate sur une tranche.",
+      "Ajouter le fromage et couvrir avec une deuxième tranche.",
+      "Répéter l'opération et couper en triangles.",
+      "Maintenir avec un pique en bois avant de servir."
+    ]
+  },
+  {
+    "id": 15,
+    "nom": "Soupe miso",
+    "categorie": "Entrée",
+    "origine": "Japonaise",
+    "image": "https://images.unsplash.com/photo-1607301405390-d831c242f59b?w=600",
+    "tempsPreparation": 15,
+    "ingredients": [
+      { "nom": "Pâte miso", "quantite": 3, "unite": "cuillères" },
+      { "nom": "Tofu", "quantite": 150, "unite": "g" },
+      { "nom": "Algue wakame", "quantite": 10, "unite": "g" },
+      { "nom": "Oignon", "quantite": 1, "unite": "pièce" }
+    ],
+    "instructions": [
+      "Faire chauffer de l'eau sans porter à ébullition forte.",
+      "Diluer la pâte miso dans un peu d'eau chaude.",
+      "Ajouter le tofu coupé en dés et les algues réhydratées.",
+      "Verser le mélange miso dans la casserole.",
+      "Garnir d'oignon nouveau émincé avant de servir."
+    ]
+  }
+]
