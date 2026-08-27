@@ -1,0 +1,292 @@
+:root {
+  --couleur-fond: rgba(149, 143, 160, 0.103);
+  --couleur-fond-carte: #ffffff;
+  --couleur-texte: #1a2540;
+  --couleur-texte-att: #1a2540;
+  --couleur-primaire: #944a00;
+  --couleur-primaire-clair: #f2a35a;
+  --couleur-vert: #1c6b3a;
+  --couleur-bordure: #dfe4ec;
+  --couleur-piste-barre: #dce6f2;
+  --rayon-carte: 14px;
+  --rayon-pastille: 999px;
+  --ombre-carte: 0 1px 3px rgba(20, 30, 60, 0.06);
+  --espacement: 1rem;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  color: #4f2500;
+  text-decoration: none;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  background-color: rgba(149, 143, 160, 0.103);
+}
+.entete {
+  border-bottom: 1px solid var(--couleur-bordure);
+}
+
+.entete-inner {
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.logo {
+  margin: 0;
+  font-size: 2.5em;
+  font-weight: 800;
+  color: #944a00;
+}
+
+.nav-principale ul {
+  list-style: none;
+  display: flex;
+  gap: 1.75rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-principale a {
+  text-decoration: none;
+  color: var(--couleur-texte-att);
+  font-weight: 400;
+}
+
+.nav-principale a:hover,
+.nav-principale a:focus-visible {
+  color: var(--couleur-primaire);
+}
+
+.nav-principale .lien-actif {
+  color: var(--couleur-primaire);
+  font-weight: 700;
+  border-bottom-color: var(--couleur-primaire);
+}
+
+.bouton-theme {
+  background-color: rgb(250 247 255 / 10%);
+  border: 5px transparent;
+}
+.bouton-theme img {
+  height: 2em;
+}
+#bouton-account {
+  background-color: rgb(250 247 255 / 10%);
+  border: 5px transparent;
+}
+#bouton-account img {
+  height: 2em;
+}
+h1 {
+  font-weight: 800;
+  color: #1a2540;
+}
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.title {
+  line-height: 0.5;
+}
+.bouton button {
+  display: flex;
+  flex-direction: row;
+  border-radius: 20px;
+  border: 1px transparent;
+  background-color: #713700;
+  color: #ffffff;
+  padding: 0 20px;
+}
+.bouton button p {
+  color: #ffffff;
+  margin-left: 5px;
+}
+
+.grid-container {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 30px;
+}
+
+.days,
+.repas-ligne {
+  display: grid;
+  grid-template-columns: 200px repeat(7, 1fr);
+  gap: 10px;
+  align-items: center;
+}
+
+.days > div {
+  text-align: center;
+  font-weight: 700;
+  font-size: 0.85em;
+  letter-spacing: 0.05em;
+  color: var(--couleur-texte);
+}
+
+.repas-label {
+  font-weight: 600;
+  color: var(--couleur-texte);
+  text-align: right;
+  padding-right: 10px;
+}
+
+.case {
+  aspect-ratio: 2/ 1.5;
+  border-radius: 12px;
+  border: 2px dashed var(--couleur-primaire-clair);
+  background-color: var(--couleur-fond-carte);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.case:hover {
+  background-color: #fdf1e4;
+}
+
+.case .plus {
+  font-size: 22px;
+  color: var(--couleur-texte);
+  font-weight: 300;
+}
+
+.case.remplie {
+  border: none;
+  box-shadow: var(--ombre-carte);
+  flex-direction: column;
+  padding: 0;
+  overflow: hidden;
+  align-items: stretch;
+}
+
+.case.remplie img {
+  width: 100%;
+  height: 65%;
+  object-fit: cover;
+}
+
+.case.remplie .nom-recette {
+  font-size: 0.8em;
+  font-weight: 600;
+  padding: 6px 8px;
+  color: var(--couleur-texte);
+}
+
+.header-2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 25px 5px;
+}
+.rechercher {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: #e8f2ff5c;
+  padding: 25px;
+}
+.ajouter-au-planning input {
+  width: 100%;
+  padding: 10px 10px 10px 30px;
+  background-color: #e7dcd14d;
+  border: 1px transparent;
+  background-image: url(../img/icon-search.svg);
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: 0.5em;
+}
+.filtre {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.filtre button {
+  color: #b95f00;
+  border-radius: 20px;
+  font-weight: 700;
+  background-color: #e8f2ff5c;
+  border: 1px transparent;
+  padding: 5px 10px;
+}
+.cancel {
+  display: flex;
+  justify-content: end;
+  padding: 25px;
+}
+.ajouter-au-planning button {
+  border: 1px transparent;
+  background-color: #ecccab45;
+}
+#cancel {
+  background-color: rgb(149 143 160 / 0%);
+}
+#close-menu {
+  background-color: #ffffff;
+}
+.ajouter-au-planning {
+  background-color: #ffffff;
+  display: none;
+  border-radius: 10px;
+}
+.ajouter-au-planning h2 {
+  font-weight: 700;
+  color: #1a2540;
+}
+#tous.bouton-actif {
+  color: whitesmoke;
+  background-color: #944a00;
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #e8f2ff75;
+  padding: 50px 30px;
+}
+#end-meal{
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: #944a00;
+}
+.end-2{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+main{
+      padding: 1rem 1.5rem;
+}
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <link rel="stylesheet" href="css/stylefavorites.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Figtree:ital,wght@0,300..900;1,300..900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Karla:ital,wght@0,200..800;1,200..800&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Overpass:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Work+Sans:ital,wght@0,100..900;1,100..900&family=Young+Serif&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorites</title>
+</head>
+<body>
+        <header class="entete">
+    <div class="entete-inner">
+      <p class="logo">MealPlanner</>
+
+      <nav class="nav-principale" aria-label="Navigation principale">
+        <ul>
+          <li><a href="index.html"  >Home</a></li>
+          <li><a href="My planning.html">My Planning</a></li>
+          <li><a href="Shopping list.html">Shopping List</a></li>
+          <li><a href="my recipes.html">My Recipes</a></li>
+          <li><a href="favorites.html" class="lien-actif" aria-current="page">Favorites</a></li>
+        </ul>
+      </nav>
+
+      <button type="button" class="bouton-theme" id="bouton-theme" aria-pressed="false">
+        <img src="img/img thème.jpeg" alt="icône de changement de thème">
+      </button>
+    </div>
+  </header>
+  <main>
+    <div class="header">
+        <div class="title">
+    <h1>My Favorites</h1>
+    <p>Your personal collection of go-to meals and culinary inspirations.</p>
+</div>
+<div class="search-title">
+    <input type="text" name="search" id="search" placeholder="Search favorites...">
+</div>
+</div>
+<div class="bouton-fav">
+    <button type="button" id="all-recipes" aria-pressed="true" class="bouton-actif">All Recipes</button>
+    <button type="button" id="breakfast" aria-pressed="false">Breakfast</button>
+    <button type="button" id="vegetarien" aria-pressed="false">Vegetarian</button>
+    <button type="button" id="quick" aria-pressed="false">Quick & Easy</button>
+    <button type="button" id="dinner" aria-pressed="false">Dinner</button>
+    <button type="button" id="deserts" aria-pressed="false">Desserts</button>
+</div>
+<div class="recettes"></div>
+  </main>
+</body>
+</html>

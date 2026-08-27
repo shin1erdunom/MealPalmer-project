@@ -1,0 +1,137 @@
+:root {
+  --couleur-fond: rgba(149, 143, 160, 0.103);
+  --couleur-fond-carte: #ffffff;
+  --couleur-texte: #1a2540;
+  --couleur-texte-att: #1a2540;
+  --couleur-primaire: #944a00;
+  --couleur-primaire-clair: #f2a35a;
+  --couleur-vert: #1c6b3a;
+  --couleur-bordure: #dfe4ec;
+  --couleur-piste-barre: #dce6f2;
+  --rayon-carte: 14px;
+  --rayon-pastille: 999px;
+  --ombre-carte: 0 1px 3px rgba(20, 30, 60, 0.06);
+  --espacement: 1rem;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  color: #4f2500;
+  text-decoration: none;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+main{
+      padding: 1rem 1.5rem;
+}
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  background-color: rgba(149, 143, 160, 0.103);
+}
+.entete {
+  border-bottom: 1px solid var(--couleur-bordure);
+}
+
+.entete-inner {
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.logo {
+  margin: 0;
+  font-size: 2.5em;
+  font-weight: 800;
+  color: #944a00;
+}
+
+.nav-principale ul {
+  list-style: none;
+  display: flex;
+  gap: 1.75rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-principale a {
+  text-decoration: none;
+  color: var(--couleur-texte-att);
+  font-weight: 400;
+}
+
+.nav-principale a:hover,
+.nav-principale a:focus-visible {
+  color: var(--couleur-primaire);
+}
+
+.nav-principale .lien-actif {
+  color: var(--couleur-primaire);
+  font-weight: 700;
+  border-bottom-color: var(--couleur-primaire);
+}
+
+.bouton-theme {
+  background-color: rgb(250 247 255 / 10%);
+  border: 5px transparent;
+}
+.bouton-theme img {
+  height: 2em;
+}
+.header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 100%;
+}
+.title{
+    line-height: .5;
+}
+#search{
+        border: 0px transparent;
+    padding: 10px 10px 10px 25px;
+    background-color: #b1cab126;
+}
+.bouton-fav{
+    display: flex;
+    gap: .8em;
+}
+.bouton-fav button{
+        border: 1px solid #cb8000;
+    padding: 7px;
+    border-radius: 20px;
+    width: 8em;
+    font-weight: 600;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.bouton-fav button:hover{
+    background-color: #cb8000;
+    color: #ffffff;
+}
+h1{
+    font-weight: 800;
+    color:#1a2540;
+}
+.bouton-actif{
+    background-color: #cb8000;
+    color: #ffffff;
+}

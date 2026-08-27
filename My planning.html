@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Figtree:ital,wght@0,300..900;1,300..900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Karla:ital,wght@0,200..800;1,200..800&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Overpass:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Work+Sans:ital,wght@0,100..900;1,100..900&family=Young+Serif&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styleplanning.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Planning</title>
+  </head>
+  <body>
+    <header class="entete">
+    <div class="entete-inner">
+      <p class="logo">MealPlanner</>
+
+      <nav class="nav-principale" aria-label="Navigation principale">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="My planning.html" class="lien-actif" aria-current="page">My Planning</a></li>
+          <li><a href="Shopping list.html">Shopping List</a></li>
+          <li><a href="my recipes.html">My Recipes</a></li>
+          <li><a href="favorites.html">Favorites</a></li>
+        </ul>
+      </nav>
+      <div>
+      <button type="button" class="bouton-theme" id="bouton-theme" aria-pressed="false">
+        <img src="img/icon-moon.svg" alt="icône de changement de thème">
+      </button>
+      <button type="button" id="bouton-account"><img src="img/icon-account.svg" alt="icône de compte"></button>
+    </div></div>
+  </header>
+
+  <main>
+    <div class="Planning">
+    <div class="header">
+        <div class="title">
+        <h1>Weekly Plan</h1>
+        <p>Plan your meals for a healthier, stress-free week.</p>
+    </div>
+    <div class="bouton">
+        <button type="button" id="ma-liste-de-courses">
+          <img src="img/icon-cart.svg" alt="">
+           <p> Générer ma liste de courses</p>
+        </button>
+    </div>
+    </div>
+    <div class="planning-grid">
+    <div class="grid-container">
+        <div class="days">
+            <div class="coin-vide"></div>
+            <div id="mon">MON</div>
+            <div id="tue">TUE</div>
+            <div id="wed">WED</div>
+            <div id="thu">THU</div>
+            <div id="fri">FRI</div>
+            <div id="sat">SAT</div>
+            <div id="sun">SUN</div>
+        </div>
+
+        <div class="repas-ligne">
+            <div class="repas-label">Matin</div>
+            <button type="button" class="case" data-jour="mon" data-repas="matin"><span class="plus">+</span></button>
+            <button type="button" class="case" data-jour="tue" data-repas="matin"><span class="plus">+</span></button>
+            <button type="button" class="case" data-jour="wed" data-repas="matin"><span class="plus">+</span></button>
+            <button type="button" class="case" data-jour="thu" data-repas="matin"><span class="plus">+</span></button>
+            <button type="button" class="case" data-jour="fri" data-repas="matin"><span class="plus">+</span></button>
+            <button type="button" class="case" data-jour="sat" data-repas="matin"><span class="plus">+</span></button>
+            <button type="button" class="case" data-jour="sun" data-repas="matin"><span class="plus">+</span></button>
+        </div>
+
+        <div class="repas-ligne">
+            <div class="repas-label">Midi</div>
+            <button type="button" class="case" data-jour="mon" data-repas="midi"><span class="plus">+</span></button>
+            <button type="button" class="case" data-jour="tue" data-repas="midi"><span class="plus">+</span></button>
+            <button type="button" class="case" data-jour="wed" data-repas="midi"><span class="plus">+</span></button>
+            <button type="button" class="case" data-jour="thu" data-repas="midi"><span class="plus">+</span></button>
+            <button type="button" class="case" data-jour="fri" data-repas="midi"><span class="plus">+</span></button>
+            <button type="button" class="case" data-jour="sat" data-repas="midi"><span class="plus">+</span></button>
+            <button type="button" class="case" data-jour="sun" data-repas="midi"><span class="plus">+</span></button>
+        </div>
+
+        <div class="repas-ligne">
+            <div class="repas-label">Soir</div>
+            <button type="button" class="case" data-jour="mon" data-repas="soir"><span class="plus">+</span></button>
+            <button type="button" class="case" data-jour="tue" data-repas="soir"><span class="plus">+</span></button>
+            <button type="button" class="case" data-jour="wed" data-repas="soir"><span class="plus">+</span></button>
+            <button type="button" class="case" data-jour="thu" data-repas="soir"><span class="plus">+</span></button>
+            <button type="button" class="case" data-jour="fri" data-repas="soir"><span class="plus">+</span></button>
+            <button type="button" class="case" data-jour="sat" data-repas="soir"><span class="plus">+</span></button>
+            <button type="button" class="case" data-jour="sun" data-repas="soir"><span class="plus">+</span></button>
+        </div>
+    </div>
+</div>
+  </div>
+
+
+
+  <div class="ajouter-au-planning">
+    <div class="header-2">
+      <h2>Ajouter une recette au planning</h2>
+      <button type="button" aria-label="fermer le menu ajouter au planning" id="close-menu">
+        <img src="img/icon-close.svg" alt="fermer le menu">
+      </button>
+    </div>
+    <div class="rechercher">
+      <label for="search-recette" class="sr-only">Rechercher une recette</label>
+      <input type="text" name="search-recette" id="search-recette" placeholder="Rechercher une recette">
+      <div class="filtre">
+        <button type="button" id="tous" class="bouton-actif">Tous</button>
+        <button type="button" id="petit-dej">Petit-déjeuner</button>
+        <button type="button" id="vegetarien">Végétarien</button>
+        <button type="button" id="rapide">Rapide</button>
+        <button type="button" id="diner">Dîner</button>
+      </div>
+      <div class="add"></div>
+    </div>
+    <div class="cancel">
+     <button type="button" id="cancel">Fermer</button>
+  </div>
+</div>
+  </main>
+  <footer>
+    <div class="end-title">
+        <a href="#" id="end-meal">MealPlanner</a>
+    </div>
+    <div class="end-1"><p>© 2024 MealPlanner. All rights reserved.</p></div>
+    <div class="end-2">
+      <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      <a href="#">Help Center</a>
+        <a href="#">Contact Us </a>
+    </div>
+  </footer>
+  </body>
+</html>

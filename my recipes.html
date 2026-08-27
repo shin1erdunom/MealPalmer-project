@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Figtree:ital,wght@0,300..900;1,300..900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Karla:ital,wght@0,200..800;1,200..800&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Overpass:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Work+Sans:ital,wght@0,100..900;1,100..900&family=Young+Serif&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/stylerecipe.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Recipes</title>
+  </head>
+  <body>
+    <header class="entete">
+    <div class="entete-inner">
+      <p class="logo">MealPlanner</>
+
+      <nav class="nav-principale" aria-label="Navigation principale">
+        <ul>
+          <li><a href="index.html" >Home</a></li>
+          <li><a href="My planning.html">My Planning</a></li>
+          <li><a href="Shopping list.html">Shopping List</a></li>
+          <li><a href="my recipes.html" class="lien-actif" aria-current="page">My Recipes</a></li>
+          <li><a href="favorites.html">Favorites</a></li>
+        </ul>
+      </nav>
+
+      <button type="button" class="bouton-theme" id="bouton-theme" aria-pressed="false">
+        <img src="img/img thème.jpeg" alt="icône de changement de thème">
+      </button>
+    </div>
+  </header>
+  <main>
+    <div class="recette">
+    <div class="header-main">
+        <div class="title-head">
+          <h1>Mes Recettes</h1>
+          <p>Gerez votre collection personnelle et vos créations culinaires.</p>
+        </div>
+        <button type="button" id="add-recipe"> + Ajouter une recette </button>
+    </div>
+    <div class="search-recette">
+        <input type="text" name="search" id="search" placeholder="Rechercher dans mes recettes...">
+        <div class="bouton-search">
+        <button type="button" id="tout" class="bouton-active">Tout</button>
+        <button type="button" id="plats-principaux">Plats Principaux</button>
+        <button type="button" id="desserts">Desserts</button>
+        <button type="button" id=vegetarien">Végétarien</button>
+    </div>
+    </div>
+    </div>
+
+
+    <div class="ajouter-une-recette">
+    <div class="header">
+        <h2>Ajouter une nouvelle recette</h2>
+        <p>Partager votre creation culinaire avec votre famille</p>
+    </div>
+    <div class="card">
+        <div class="infos partie">
+        <h2>Informations générales</h2>
+        <div class="infogrid">
+            <div id="titre">
+                <label for="title">Titre de la recette</label>
+                <input type="text" name="title" id="title" placeholder="Ex: Gratin Dauphinois" required>
+                <div class="message">
+                    <img src="img/icon-warning.svg" alt="">
+                <span>le titre est obligatoire</span>
+            </div>
+        </div>
+            <div id="categorie-id">
+                <label for="categorie">Catégorie</label>
+                <input type="text" name="categorie" id="categorie" placeholder="Choisir une catégorie...">
+            </div>
+            <div id="origine">
+                <label for="origin">Origine</label>
+                <input type="text" name="origin" id="origin" placeholder="Ex: France">
+            </div>
+            <div id="temps">
+                <label for="time">Temps de préparation (min)</label>
+                <input type="text" name="time" id="time" placeholder="Ex: 45">
+            </div>
+        </div>
+        </div>
+
+        <div class="img-recette">
+            <p>Image de la recette</p>
+            <button type="button" id="add-img">
+                <img src="img/icon-image-add.svg" alt="">
+                <p>Cliquez pour ajouter une image</p>
+            </button>
+        </div>
+        
+        <div class="ingredients partie">
+            <h2>Ingrédients</h2>
+            <div class="ing">
+            <div class="ingredientgrid">
+                <div id="Name-ingredient">
+                    <label for="name-ingredient">Nom de l'ingrédient</label>
+                        <input type="text" name="name-ingredient" id="name-ingredient-1" placeholder="Ex: Pommes de terre">
+                        <input type="text" name="name-ingredient" id="name-ingredient-2" placeholder="Ex: Crème fraîche">
+                </div>
+                <div id="quantite">
+                    <label for="quantity">Quantité</label>
+                    <input type="text" name="quantity" id="quantity-1" placeholder="Ex: 1kg">
+                    <input type="text" name="quantity" id="quantity-2" placeholder="Ex: 50cl">
+                </div>
+            </div>
+            <div class="trash">
+                <button type="button">
+                    <img src="img/icon-trash.svg" alt="supprimer">
+                </button>
+                <button type="button">
+                    <img src="img/icon-trash.svg" alt="supprimer">
+                </button>
+            </div>
+        </div>
+            <button type="button" id="add-ingredient" aria-pressed="false">+ Ajouter un ingrédient</button>
+        </div>
+        <div class="instructions partie">
+            <h2>Instructions</h2>
+            <ul class="etapes">
+                <li>
+                    <div class="step-text">
+                    <span>1</span>
+                    <p>Etape</p>
+                </div>
+                    <textarea name="step" id="step-1" placeholder="Décrivez l'étape ici"></textarea>
+                </li>
+            </ul>
+            <button type="button" id="add-step" aria-pressed="false">+ Ajouter une étape</button>
+        </div>
+        <div class="send">
+            <button type="button" id="cancel" aria-pressed="false">Annuler</button>
+            <button type="button" id="save" aria-pressed="false">Enregistrer la recette</button>
+        </div>
+    </div>
+</div>
+  </main>
+  <footer>
+    <div class="end-title">
+        <a href="#" id="end-meal">MealPlanner</a>
+        <p>© 2024 MealPlanner. All rights reserved.</p>
+      </div>
+      <div class="end-1">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Help Statement</a>
+        <a href="#">Contact Us </a>
+      </div>
+  </footer>
+  </body>
+  </html>

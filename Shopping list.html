@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Figtree:ital,wght@0,300..900;1,300..900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Karla:ital,wght@0,200..800;1,200..800&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Overpass:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Work+Sans:ital,wght@0,100..900;1,100..900&family=Young+Serif&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/shopping.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping List</title>
+  </head>
+  <body>
+    <header class="entete">
+    <div class="entete-inner">
+      <p class="logo">MealPlanner</>
+
+      <nav class="nav-principale" aria-label="Navigation principale">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="My planning.html">My Planning</a></li>
+          <li><a href="Shopping list.html" class="lien-actif" aria-current="page">Shopping List</a></li>
+          <li><a href="my recipes.html">My Recipes</a></li>
+          <li><a href="favorites.html">Favorites</a></li>
+        </ul>
+      </nav>
+      <div>
+      <button type="button" id="bouton-account"><img src="img/icon-account.svg" alt="icône de compte"></button>
+    </div></div>
+  </header>
+
+
+  <main>
+    <div class="shopping-list">
+        <div class="header">
+            <div class="title">
+                <h1>Shopping List</h1>
+                <p>Here are all the ingredients needed for your planned meals</p>
+            </div>
+            <div class="bouton-title">
+                <button type="button" id="print">
+                    <img src="img/icon-print.svg" alt="">
+                    <p>Imprimer/Exporter</p>
+                </button>
+                <button type="button" id="reset">
+                    <img src="img/icon-refresh.svg" alt="">
+                    <p>Réinstialiser la liste</p>
+                </button>
+            </div>
+        </div>
+        <div class="progression">
+            <div class="progression-text">
+                <h2>Progression</h2>
+                <p id="progression"></p>
+            </div>
+            <span id="barre-de-progression"></span>
+        </div>
+        <div class="liste-des-articles">
+          <div id="fruits-legumes">
+            <ul id="liste-fruits-legumes">
+            </ul>
+          </div>
+          <div id="viandes">
+            <ul id="liste-viandes">
+            </ul>
+          </div>
+          <div id="epicerie">
+            <ul id="liste-epicerie">
+            </ul>
+          </div>
+          <div id="produit-laitier">
+            <ul id="liste-produit-laitier">
+            </ul>
+          </div>
+        </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="end-title">
+        <a href="#" id="end-meal">MealPlanner</a>
+    </div>
+    <div class="end-1">
+      <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      <a href="#">Help Center</a>
+    </div>
+    <div class="end-2">
+      <p>© 2024 MealPlanner. All rights reserved.</p>
+    </div>
+  </footer>
+
+
+
+
+  </body>
+</html>

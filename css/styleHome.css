@@ -1,0 +1,240 @@
+:root {
+  --couleur-fond: rgba(149, 143, 160, 0.103);
+  --couleur-fond-carte: #ffffff;
+  --couleur-texte: #1a2540;
+  --couleur-texte-att: #1a2540;
+  --couleur-primaire: #944a00;
+  --couleur-primaire-clair: #f2a35a;
+  --couleur-vert: #1c6b3a;
+  --couleur-bordure: #dfe4ec;
+  --couleur-piste-barre: #dce6f2;
+  --rayon-carte: 14px;
+  --rayon-pastille: 999px;
+  --ombre-carte: 0 1px 3px rgba(20, 30, 60, 0.06);
+  --espacement: 1rem;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  color: #4f2500;
+  text-decoration: none;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  background-color: rgba(149, 143, 160, 0.103);
+}
+.entete {
+  border-bottom: 1px solid var(--couleur-bordure);
+}
+
+.entete-inner {
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.logo {
+  margin: 0;
+  font-size: 2.5em;
+  font-weight: 800;
+  color: #944a00;
+}
+
+.nav-principale ul {
+  list-style: none;
+  display: flex;
+  gap: 1.75rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-principale a {
+  text-decoration: none;
+  color: var(--couleur-texte-att);
+  font-weight: 400;
+}
+
+.nav-principale a:hover,
+.nav-principale a:focus-visible {
+  color: var(--couleur-primaire);
+}
+
+.nav-principale .lien-actif {
+  color: var(--couleur-primaire);
+  font-weight: 700;
+  border-bottom-color: var(--couleur-primaire);
+}
+
+.bouton-theme {
+  background-color: rgb(250 247 255 / 10%);
+  border: 5px transparent;
+}
+.bouton-theme img {
+  height: 2em;
+}
+#raccourci {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: center;
+
+  width: 100%;
+}
+#recherche {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#search {
+  border: 1px solid #cb8000;
+  padding: 10px;
+  width: 50%;
+}
+
+#filtre {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+#filtre button {
+  background-color: #e8f2ff;
+  border-radius: 20px;
+  border: 1px solid #cb8000;
+}
+#filtre .filter-active {
+  background-color: #b95f00;
+}
+#filtre button:hover {
+  background-color: #b95f00;
+}
+#charger-recettes {
+  background-color: #944a00;
+  color: whitesmoke;
+  padding: 5px;
+  width: 20%;
+  border-radius: 20px;
+  border: 1px transparent;
+}
+.charger {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#tableau-de-bord {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0 1.5rem;
+  gap: 20px;
+}
+.header1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.card-table {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  border-radius: 10px;
+  padding: 20px;
+  align-items: center;
+}
+.card-table-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 1em;
+}
+.table {
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+  align-items: center;
+  justify-content: space-between;
+}
+.statistique{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+.distribution-categorie, .nbre-de-plats{
+background-color: white;
+width: 50%;
+padding: 20px;
+border-radius: 10px;
+}
+main{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.card-table img{
+  height: 2.5rem;
+}
+.nbre-de-plats{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.nbre-de-plats img{
+  height: 4em
+}
+#details button{
+  border: 0px transparent;
+  background-color: rgb(250 247 255 / 10%);
+}
+footer{
+  border-top: 1px solid #944a00;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 50px;
+  gap: 100px;
+}
+
+footer div{
+  display: flex;
+  flex-direction: column;
+}
+
+.end-1, .end-2{
+  line-height: 2;
+}
+#end-meal{
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: #944a00;
+}
+.end-2{
+  margin-left: 150px;
+}
+main{
+      padding: 1rem 1.5rem;
+}

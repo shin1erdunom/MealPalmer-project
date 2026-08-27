@@ -1,0 +1,197 @@
+:root {
+  --couleur-fond: rgba(149, 143, 160, 0.103);
+  --couleur-fond-carte: #ffffff;
+  --couleur-texte: #1a2540;
+  --couleur-texte-att: #1a2540;
+  --couleur-primaire: #944a00;
+  --couleur-primaire-clair: #f2a35a;
+  --couleur-vert: #1c6b3a;
+  --couleur-bordure: #dfe4ec;
+  --couleur-piste-barre: #dce6f2;
+  --rayon-carte: 14px;
+  --rayon-pastille: 999px;
+  --ombre-carte: 0 1px 3px rgba(20, 30, 60, 0.06);
+  --espacement: 1rem;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  color: #4f2500;
+  text-decoration: none;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  background-color: rgba(149, 143, 160, 0.103);
+}
+.entete {
+  border-bottom: 1px solid var(--couleur-bordure);
+}
+
+.entete-inner {
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.logo {
+  margin: 0;
+  font-size: 2.5em;
+  font-weight: 800;
+  color: #944a00;
+}
+
+.nav-principale ul {
+  list-style: none;
+  display: flex;
+  gap: 1.75rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-principale a {
+  text-decoration: none;
+  color: var(--couleur-texte-att);
+  font-weight: 400;
+}
+
+.nav-principale a:hover,
+.nav-principale a:focus-visible {
+  color: var(--couleur-primaire);
+}
+
+.nav-principale .lien-actif {
+  color: var(--couleur-primaire);
+  font-weight: 700;
+  border-bottom-color: var(--couleur-primaire);
+}
+
+#bouton-account {
+  background-color: rgb(250 247 255 / 10%);
+  border: 5px transparent;
+}
+#bouton-account img {
+  height: 2em;
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title{
+    line-height: 0.5;
+}
+.bouton-title{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.bouton-title p{
+    margin-left: 5px;
+}
+.bouton-title button{
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 2rem;
+    padding: 0 10px;
+    border: 1px solid #4f2500;
+}
+.bouton-title button img{
+    height: 1.1rem;
+}
+.bouton-title #print{
+    background-color: #944A00;
+    border: 1px solid #944A00;
+}
+.bouton-title #print p{
+    color: whitesmoke;
+}
+.bouton-title #reset{
+    background-color: whitesmoke;
+    color: #1a2540;
+}
+.bouton-title #reset p{
+    color: #1a2540;
+}
+.progression{
+    background-color: #E8F2FF;
+    padding: 10px 20px 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.progression-text{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+      background-color: #E8F2FF;
+  padding: 30px 30px;
+  font-size: .9rem;
+}
+
+#end-meal{
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: #944a00;
+}
+.end-1{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+.end-2 p{
+  color: #1c6b3a;
+  font-weight: 500;
+}
+main{
+      padding: 1rem 1.5rem;
+}
+.liste-des-articles{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+#fruits-legumes, #viandes, #epicerie, #produit-laitier{
+  border: 1px solid #D1E4FB;
+  box-shadow: 0px 0px 20px #E8F2FF;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  border-radius: 10px;
+}
+.shopping-list{
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
