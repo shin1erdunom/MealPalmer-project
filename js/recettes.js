@@ -1,10 +1,34 @@
 import { getRecettes } from "./data.js";
 
+let rechercheActuelle = "";
+let filtreActuel = "";
+
+function appliquerFiltres() {
+  const recettesFiltrees = getRecettes().filter((recette) => {
+    const correspondRecherche = recette.nom
+      .toLowerCase()
+      .includes(rechercheActuelle.toLowerCase());
+
+    let correspondFiltre;
+    if (filtreActuel === "rapide") {
+      correspondFiltre = recette.tempsPreparation < 30;
+    } else {
+      correspondFiltre =
+        filtreActuel === "" ||
+        recette.origine === filtreActuel ||
+        recette.categorie === filtreActuel;
+    }
+    return correspondRecherche && correspondFiltre;
+  });
+  afficherRecettes(recettesFiltrees);
+}
+
 export function afficherRecettes(recettes) {
   const recipeCard = document.getElementById("recipe-card");
   recipeCard.innerHTML = "";
   recettes.forEach((recette) => {
     const carte = document.createElement("div");
+    carte.classList.add("img-card");
     carte.innerHTML = `<img src="${recette.image}" alt="image de ${recette.nom}">
                         <span>${recette.categorie}</span>
                         <h3>${recette.nom}</h3>
@@ -17,24 +41,22 @@ export function afficherRecettes(recettes) {
 const search = document.getElementById("search");
 
 search.addEventListener("input", function () {
-  const recherche = search.value;
-  const recettesFiltrees = getRecettes().filter((recette) => {
-    return recette.nom.toLowerCase().includes(recherche.toLowerCase());
-  });
-  afficherRecettes(recettesFiltrees);
+  rechercheActuelle = search.value;
+  appliquerFiltres();
 });
 
 const boutonsFiltre = document.querySelectorAll("[data-filtre]");
 
 boutonsFiltre.forEach((boutonFiltre) => {
   boutonFiltre.addEventListener("click", function () {
-    const boutonValue = boutonFiltre.dataset.filtre;
-    const recettesFiltrees = getRecettes().filter((recette) => {
-      return (
-        recette.origine.includes(boutonValue) ||
-        recette.categorie.includes(boutonValue)
-      );
-    });
-    afficherRecettes(recettesFiltrees);
+    filtreActuel = boutonFiltre.dataset.filtre;
+    appliquerFiltres();
   });
+});
+
+const boutonTous = document.getElementById("tous");
+
+boutonTous.addEventListener("click", function () {
+  filtreActuel = "";
+  appliquerFiltres();
 });

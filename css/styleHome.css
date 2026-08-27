@@ -238,3 +238,11 @@ footer div{
 main{
       padding: 1rem 1.5rem;
 }
+#recipe-card{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+#recipe-card .img-card img{
+  height: 2em;
+}
