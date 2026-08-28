@@ -42,7 +42,10 @@ export function afficherRecettes(recettes) {
                       <img src="${estFavori(recette.id) ? 'img/heart_filled.png' : 'img/heart_empty.png'}" alt="favoris" class="bouton-favori">
                       <span>${recette.categorie}</span>
                       <h3>${recette.nom}</h3>
-                      <p>${recette.tempsPreparation} min</p>`;
+                      <div class="text-time">
+                      <img src="img/icon_clock.png" alt="">
+                      <p>${recette.tempsPreparation} min</p>
+                      </div>`;
 
   const boutonFavori = carte.querySelector(".bouton-favori");
   boutonFavori.addEventListener("click", function () {
