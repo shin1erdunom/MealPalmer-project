@@ -20,6 +20,14 @@ function appliquerFiltres() {
     }
     return correspondRecherche && correspondFiltre;
   });
+  const aucunResultat = document.getElementById("aucun-resultat");
+
+  if (recettesFiltrees.length === 0) {
+    aucunResultat.textContent =
+      "Aucune recette ne correspond à votre recherche.";
+  } else {
+    aucunResultat.textContent = "";
+  }
   afficherRecettes(recettesFiltrees);
 }
 

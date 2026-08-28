@@ -244,5 +244,9 @@ main{
   gap: 20px;
 }
 #recipe-card .img-card img{
-  height: 2em;
+      height: 7em;
+    width: 100%
+}
+#recipe-card .img-card{
+background-color: white;
 }
