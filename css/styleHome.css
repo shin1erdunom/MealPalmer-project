@@ -278,6 +278,7 @@ main{
   margin: 8px 16px 4px;
   font-size: 1.1rem;
   color: var(--couleur-texte);
+  font-weight: 700;
 }
 
 .img-card p {

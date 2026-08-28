@@ -40,7 +40,7 @@ export function afficherRecettes(recettes) {
     carte.innerHTML = `<img src="${recette.image}" alt="image de ${recette.nom}">
                         <span>${recette.categorie}</span>
                         <h3>${recette.nom}</h3>
-                        <p>${recette.tempsPreparation}</p>`;
+                        <p>${recette.tempsPreparation} min </p>`;
 
     recipeCard.appendChild(carte);
   });
