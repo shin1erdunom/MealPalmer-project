@@ -240,6 +240,7 @@ main{
 }
 
 
+
 #recipe-card {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -257,7 +258,7 @@ main{
   flex-direction: column;
 }
 
-.img-card img {
+.img-card img:not(.bouton-favori) {
   width: 100%;
   height: 180px;
   object-fit: cover;
@@ -278,11 +279,28 @@ main{
   margin: 8px 16px 4px;
   font-size: 1.1rem;
   color: var(--couleur-texte);
-  font-weight: 700;
 }
 
 .img-card p {
   margin: 0 16px 16px;
   color: #6b7280;
   font-size: 0.85rem;
+}
+
+
+.img-card {
+  position: relative;
+}
+
+.bouton-favori {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  height: 40px;
+    width: 40px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  padding: 6px;
+  box-shadow: var(--ombre-carte);
+  cursor: pointer;
 }

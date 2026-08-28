@@ -2,6 +2,10 @@ export function getFavoris() {
   return JSON.parse(localStorage.getItem("favoris")) ?? [];
 }
 
+export function estFavori(id) {
+  return getFavoris().includes(id);
+}
+
 export function toggleFavori(id) {
   const favoris = getFavoris();
   let nouveauxFavoris;

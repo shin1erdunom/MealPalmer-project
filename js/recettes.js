@@ -1,4 +1,5 @@
 import { getRecettes } from "./data.js";
+import { estFavori, toggleFavori } from "./storage.js";
 
 let rechercheActuelle = "";
 let filtreActuel = "";
@@ -35,15 +36,22 @@ export function afficherRecettes(recettes) {
   const recipeCard = document.getElementById("recipe-card");
   recipeCard.innerHTML = "";
   recettes.forEach((recette) => {
-    const carte = document.createElement("div");
-    carte.classList.add("img-card");
-    carte.innerHTML = `<img src="${recette.image}" alt="image de ${recette.nom}">
-                        <span>${recette.categorie}</span>
-                        <h3>${recette.nom}</h3>
-                        <p>${recette.tempsPreparation} min </p>`;
+  const carte = document.createElement("div");
+  carte.classList.add("img-card");
+  carte.innerHTML = `<img src="${recette.image}" alt="image de ${recette.nom}">
+                      <img src="${estFavori(recette.id) ? 'img/heart_filled.png' : 'img/heart_empty.png'}" alt="favoris" class="bouton-favori">
+                      <span>${recette.categorie}</span>
+                      <h3>${recette.nom}</h3>
+                      <p>${recette.tempsPreparation} min</p>`;
 
-    recipeCard.appendChild(carte);
+  const boutonFavori = carte.querySelector(".bouton-favori");
+  boutonFavori.addEventListener("click", function () {
+    toggleFavori(recette.id);
+    appliquerFiltres();
   });
+
+  recipeCard.appendChild(carte);
+});
 }
 
 const search = document.getElementById("search");
