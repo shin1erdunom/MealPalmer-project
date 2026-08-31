@@ -1,5 +1,6 @@
 import { getRecettes } from "./data.js";
-import { estFavori, toggleFavori } from "./storage.js";
+import { estFavori, toggleFavori, getFavoris } from "./storage.js";
+import { ouvrirModale } from "./modale.js";
 
 let rechercheActuelle = "";
 let filtreActuel = "";
@@ -19,16 +20,17 @@ function appliquerFiltres() {
         recette.origine === filtreActuel ||
         recette.categorie === filtreActuel;
     }
+
     return correspondRecherche && correspondFiltre;
   });
-  const aucunResultat = document.getElementById("aucun-resultat");
 
+  const aucunResultat = document.getElementById("aucun-resultat");
   if (recettesFiltrees.length === 0) {
-    aucunResultat.textContent =
-      "Aucune recette ne correspond à votre recherche.";
+    aucunResultat.textContent = "Aucune recette ne correspond à votre recherche.";
   } else {
     aucunResultat.textContent = "";
   }
+
   afficherRecettes(recettesFiltrees);
 }
 
@@ -36,25 +38,31 @@ export function afficherRecettes(recettes) {
   const recipeCard = document.getElementById("recipe-card");
   recipeCard.innerHTML = "";
   recettes.forEach((recette) => {
-  const carte = document.createElement("div");
-  carte.classList.add("img-card");
-  carte.innerHTML = `<img src="${recette.image}" alt="image de ${recette.nom}">
-                      <img src="${estFavori(recette.id) ? 'img/heart_filled.png' : 'img/heart_empty.png'}" alt="favoris" class="bouton-favori">
-                      <span>${recette.categorie}</span>
-                      <h3>${recette.nom}</h3>
-                      <div class="text-time">
-                      <img src="img/icon_clock.png" alt="">
-                      <p>${recette.tempsPreparation} min</p>
-                      </div>`;
+    const carte = document.createElement("div");
+    carte.classList.add("img-card");
+    carte.innerHTML = `<img src="${recette.image}" alt="image de ${recette.nom}">
+                        <img src="${estFavori(recette.id) ? 'img/heart_filled.png' : 'img/heart_empty.png'}" alt="favoris" class="bouton-favori">
+                        <span>${recette.categorie}</span>
+                        <h3>${recette.nom}</h3>
+                        <p>${recette.tempsPreparation} min</p>`;
 
-  const boutonFavori = carte.querySelector(".bouton-favori");
-  boutonFavori.addEventListener("click", function () {
-    toggleFavori(recette.id);
-    appliquerFiltres();
+    const boutonFavori = carte.querySelector(".bouton-favori");
+    boutonFavori.addEventListener("click", function (evenement) {
+      evenement.stopPropagation();
+      toggleFavori(recette.id);
+      appliquerFiltres();
+    });
+
+    carte.addEventListener("click", function () {
+      ouvrirModale(recette);
+    });
+
+    recipeCard.appendChild(carte);
   });
 
-  recipeCard.appendChild(carte);
-});
+
+  const totalFavoris = document.getElementById("total-favoris");
+  totalFavoris.textContent = getFavoris().length;
 }
 
 const search = document.getElementById("search");
