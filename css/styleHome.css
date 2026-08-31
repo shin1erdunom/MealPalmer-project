@@ -359,3 +359,121 @@ main {
   object-fit: cover;
   border-radius: var(--rayon-carte);
 }
+
+/* ===== Nouvelle modale (design fidèle à la maquette) ===== */
+.modale-contenu {
+  max-width: 900px;
+  padding: 0;
+}
+
+.modale-hero {
+  position: relative;
+}
+
+#modale-image {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: var(--rayon-carte) var(--rayon-carte) 0 0;
+}
+
+#fermer-modale {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+
+.modale-badges {
+  position: absolute;
+  bottom: 60px;
+  left: 24px;
+  display: flex;
+  gap: 8px;
+}
+
+.modale-badges span {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: var(--couleur-texte);
+  padding: 4px 12px;
+  border-radius: var(--rayon-pastille);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+#modale-titre {
+  position: absolute;
+  bottom: 16px;
+  left: 24px;
+  color: #ffffff;
+  font-size: 1.8rem;
+  font-weight: 800;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.modale-body {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 32px;
+  padding: 24px;
+}
+
+.modale-planification {
+  background-color: #e8f2ff;
+  border-radius: var(--rayon-carte);
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.planification-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#modale-favori img {
+  width: 20px;
+  height: 20px;
+}
+
+#modale-ajouter-planning {
+  width: 100%;
+  margin-top: 16px;
+  background-color: var(--couleur-vert);
+  color: #ffffff;
+  padding: 10px;
+  border-radius: var(--rayon-pastille);
+  font-weight: 600;
+}
+
+#modale-ingredients li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--couleur-bordure);
+}
+
+#modale-ingredients li span:last-child {
+  background-color: #e8f2ff;
+  padding: 2px 10px;
+  border-radius: var(--rayon-pastille);
+  font-size: 0.85rem;
+}
+
+#modale-instructions li {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.etape-numero {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: #DB7619;
+  color: #301400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 400;
+}

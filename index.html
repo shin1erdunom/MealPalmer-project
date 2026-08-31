@@ -126,37 +126,46 @@
       </div>
     </main>
     <footer>
-      <div class="end-title">
-        <a href="#" id="end-meal">MealPlanner</a>
-        <p>© 2024 MealPlanner. All rights reserved.</p>
-      </div>
-      <div class="end-1">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
-      </div>
-      <div class="end-2">
-        <a href="#">Accessibility Statement</a>
-        <a href="#">Contact Us </a>
-      </div>
-    </footer>
-    <div id="modale-recette" class="modale" role="dialog" aria-modal="true" aria-labelledby="modale-titre" hidden>
+      <div id="modale-recette" class="modale" role="dialog" aria-modal="true" aria-labelledby="modale-titre" hidden>
   <div class="modale-contenu">
-    <button type="button" id="fermer-modale" aria-label="Fermer la fiche recette">
-      <img src="img/icon-close.svg" alt="">
-    </button>
 
-    <img id="modale-image" src="" alt="">
-    <span id="modale-categorie"></span>
-    <h2 id="modale-titre"></h2>
-    <p id="modale-temps"></p>
+    <div class="modale-hero">
+      <img id="modale-image" src="" alt="">
+      <button type="button" id="fermer-modale" aria-label="Fermer la fiche recette">
+        <img src="img/icon-close.svg" alt="">
+      </button>
+      <div class="modale-badges">
+        <span id="modale-categorie"></span>
+        <span id="modale-origine"></span>
+        <span id="modale-temps"></span>
+      </div>
+      <h2 id="modale-titre"></h2>
+    </div>
 
-    <h3>Ingrédients</h3>
-    <ul id="modale-ingredients"></ul>
+    <div class="modale-body">
+      <div class="modale-colonne-gauche">
+        <div class="modale-planification">
+          <div class="planification-header">
+            <h3>Planification</h3>
+            <button type="button" id="modale-favori" aria-label="Ajouter aux favoris">
+              <img src="img/heart_empty.png" alt="">
+            </button>
+          </div>
+          <button type="button" id="modale-ajouter-planning">
+            Ajouter au planning
+          </button>
+        </div>
 
-    <h3>Instructions</h3>
-    <ol id="modale-instructions"></ol>
+        <h3>Ingrédients</h3>
+        <ul id="modale-ingredients"></ul>
+      </div>
 
-    <button type="button" id="modale-favori">Ajouter aux favoris</button>
+      <div class="modale-colonne-droite">
+        <h3>Préparation</h3>
+        <ol id="modale-instructions"></ol>
+      </div>
+    </div>
+
   </div>
 </div>
     <script type="module" src="js/app.js"></script>
