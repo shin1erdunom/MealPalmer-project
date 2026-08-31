@@ -266,6 +266,10 @@ main {
   object-fit: cover;
 }
 
+.img-card:hover{
+  cursor: pointer;
+}
+
 .img-card span {
   align-self: flex-start;
   margin: 12px 0 0 16px;
