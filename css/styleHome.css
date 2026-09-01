@@ -365,7 +365,7 @@ main {
 
 #modale-image {
   width: 100%;
-  height: 220px;
+  height: 30rem;
   object-fit: cover;
   border-radius: var(--rayon-carte);
 }
@@ -386,7 +386,7 @@ main {
 
 #modale-image {
   width: 100%;
-  height: 320px;
+  height: 30rem;
   object-fit: cover;
   border-radius: var(--rayon-carte) var(--rayon-carte) 0 0;
 }
