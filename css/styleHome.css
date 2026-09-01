@@ -168,6 +168,12 @@ body {
   align-items: center;
   justify-content: center;
   margin-left: 1em;
+  line-height: 0;
+}
+.card-table-text p:last-child{
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-top: .5rem;
 }
 .table {
   display: flex;
@@ -194,7 +200,7 @@ main {
   gap: 20px;
 }
 .card-table img {
-  height: 2.5rem;
+  height: 3.4rem;
 }
 .nbre-de-plats {
   display: flex;

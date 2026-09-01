@@ -1,18 +1,21 @@
 import { estFavori, toggleFavori } from "./storage.js";
 
 const modale = document.getElementById("modale-recette");
+const modaleContenu = document.querySelector(".modale-contenu");
 const fermerModaleBtn = document.getElementById("fermer-modale");
 
-export function ouvrirModale(recette) {
+let dernierElementFocus = null;
+
+export function ouvrirModale(recette, elementDeclencheur) {
+  dernierElementFocus = elementDeclencheur;
+
   document.getElementById("modale-image").src = recette.image;
   document.getElementById("modale-image").alt = `image de ${recette.nom}`;
   document.getElementById("modale-categorie").textContent = recette.categorie;
   document.getElementById("modale-origine").textContent = recette.origine;
-  document.getElementById("modale-temps").textContent =
-    `${recette.tempsPreparation} min`;
+  document.getElementById("modale-temps").textContent = `${recette.tempsPreparation} min`;
   document.getElementById("modale-titre").textContent = recette.nom;
 
-  // Ingrédients
   const listeIngredients = document.getElementById("modale-ingredients");
   listeIngredients.innerHTML = "";
   recette.ingredients.forEach((ingredient) => {
@@ -21,7 +24,6 @@ export function ouvrirModale(recette) {
     listeIngredients.appendChild(item);
   });
 
-  // Instructions numérotées
   const listeInstructions = document.getElementById("modale-instructions");
   listeInstructions.innerHTML = "";
   recette.instructions.forEach((etape, index) => {
@@ -30,7 +32,6 @@ export function ouvrirModale(recette) {
     listeInstructions.appendChild(item);
   });
 
-  // Bouton favori dans la modale
   const boutonFavoriModale = document.getElementById("modale-favori");
   boutonFavoriModale.querySelector("img").src = estFavori(recette.id)
     ? "img/heart_filled.png"
@@ -42,11 +43,47 @@ export function ouvrirModale(recette) {
       : "img/heart_empty.png";
   };
 
-  modale.hidden = false;
+modale.hidden = false;
+
+fermerModaleBtn.focus();
 }
 
 function fermerModale() {
   modale.hidden = true;
+
+  if (dernierElementFocus) {
+    dernierElementFocus.focus();
+  }
 }
 
 fermerModaleBtn.addEventListener("click", fermerModale);
+
+document.addEventListener("keydown", function (evenement) {
+  if (evenement.key === "Escape" && !modale.hidden) {
+    fermerModale();
+  }
+});
+
+document.addEventListener("keydown", function (evenement) {
+  if (evenement.key !== "Tab" || modale.hidden) {
+    return;
+  }
+
+  const elementsFocusables = modaleContenu.querySelectorAll(
+    'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+  );
+  const premier = elementsFocusables[0];
+  const dernier = elementsFocusables[elementsFocusables.length - 1];
+
+  if (evenement.shiftKey) {
+    if (document.activeElement === premier) {
+      evenement.preventDefault();
+      dernier.focus();
+    }
+  } else {
+    if (document.activeElement === dernier) {
+      evenement.preventDefault();
+      premier.focus();
+    }
+  }
+});

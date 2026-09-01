@@ -26,7 +26,8 @@ function appliquerFiltres() {
 
   const aucunResultat = document.getElementById("aucun-resultat");
   if (recettesFiltrees.length === 0) {
-    aucunResultat.textContent = "Aucune recette ne correspond à votre recherche.";
+    aucunResultat.textContent =
+      "Aucune recette ne correspond à votre recherche.";
   } else {
     aucunResultat.textContent = "";
   }
@@ -41,7 +42,7 @@ export function afficherRecettes(recettes) {
     const carte = document.createElement("div");
     carte.classList.add("img-card");
     carte.innerHTML = `<img src="${recette.image}" alt="image de ${recette.nom}">
-                        <img src="${estFavori(recette.id) ? 'img/heart_filled.png' : 'img/heart_empty.png'}" alt="favoris" class="bouton-favori">
+                        <img src="${estFavori(recette.id) ? "img/heart_filled.png" : "img/heart_empty.png"}" alt="favoris" class="bouton-favori">
                         <span>${recette.categorie}</span>
                         <h3>${recette.nom}</h3>
                         <div class="text-time">
@@ -60,33 +61,48 @@ export function afficherRecettes(recettes) {
       ouvrirModale(recette);
     });
 
+    carte.setAttribute("tabindex", "0");
+    carte.setAttribute("role", "button");
+    carte.setAttribute("aria-label", `Voir la recette ${recette.nom}`);
+ 
+    carte.addEventListener("click", function () {
+      ouvrirModale(recette, carte);
+    });
+ 
+    carte.addEventListener("keydown", function (evenement) {
+      if (evenement.key === "Enter") {
+        evenement.preventDefault();
+        ouvrirModale(recette, carte);
+      }
+    });
+ 
     recipeCard.appendChild(carte);
   });
-
-
+ 
   const totalFavoris = document.getElementById("total-favoris");
   totalFavoris.textContent = getFavoris().length;
 }
-
+ 
 const search = document.getElementById("search");
-
+ 
 search.addEventListener("input", function () {
   rechercheActuelle = search.value;
   appliquerFiltres();
 });
-
+ 
 const boutonsFiltre = document.querySelectorAll("[data-filtre]");
-
+ 
 boutonsFiltre.forEach((boutonFiltre) => {
   boutonFiltre.addEventListener("click", function () {
     filtreActuel = boutonFiltre.dataset.filtre;
     appliquerFiltres();
   });
 });
-
+ 
 const boutonTous = document.getElementById("tous");
-
+ 
 boutonTous.addEventListener("click", function () {
   filtreActuel = "";
   appliquerFiltres();
 });
+ 
