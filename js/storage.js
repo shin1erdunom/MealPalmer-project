@@ -21,7 +21,7 @@ export function toggleFavori(id) {
 
 
 export function getPlanning(){
-  return JSON.parse(localStorage.getItem("planning")) ?? [];
+  return JSON.parse(localStorage.getItem("planning")) ?? {};
 }
 
 export function sauvegarderPlanning(planning) {
@@ -30,21 +30,14 @@ export function sauvegarderPlanning(planning) {
 
 export function ajouterAuPlanning(jour, repas, idRecette) {
   let planning = getPlanning();
-
-  if (!planning[jour]) {
-    planning[jour] = {};
-  }
-
-  planning[jour][repas] = idRecette;
-
+  let key = `${jour}-${repas}`;
+  planning[key] = idRecette;
   sauvegarderPlanning(planning);
 }
 
-export function retirerDuPlanning(jour, repas) {
+export function retirerPlanning(jour, repas) {
   let planning = getPlanning();
-
-  if (planning[jour] && planning[jour][repas]) {
-    delete planning[jour][repas];
-    sauvegarderPlanning(planning);
-  }
+  let key = `${jour}-${repas}`;
+  delete planning[key];
+  sauvegarderPlanning(planning);
 }
