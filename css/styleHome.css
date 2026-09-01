@@ -170,10 +170,10 @@ body {
   margin-left: 1em;
   line-height: 0;
 }
-.card-table-text p:last-child{
+.card-table-text p:last-child {
   font-weight: 700;
   font-size: 1.5rem;
-  margin-top: .5rem;
+  margin-top: 0.5rem;
 }
 .table {
   display: flex;
@@ -272,7 +272,7 @@ main {
   object-fit: cover;
 }
 
-.img-card:hover{
+.img-card:hover {
   cursor: pointer;
 }
 
@@ -508,8 +508,7 @@ button#modale-favori {
 }
 
 .plannification-program input {
-  background-color: #686d74;
-  background-color: #3b402736;
+  background-color: #bdc3c7a6;
   border: none;
   padding: 10px;
   width: 50%;
@@ -539,4 +538,14 @@ button#modale-favori {
 
 .modale-contenu::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Opera */
+}
+
+#jour-select {
+  background-color: #bdc3c7a6;
+  padding: 10px;
+  width: 50%;
+  color: #333;
+  cursor: pointer;
+  border: none;
+  border-bottom: 1px solid #cb80007a;
 }
