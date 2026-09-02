@@ -540,7 +540,7 @@ button#modale-favori {
   display: none; /* Chrome, Safari, Opera */
 }
 
-#jour-select {
+#jour-select, #repas-select {
   background-color: #bdc3c7a6;
   padding: 10px;
   width: 50%;
@@ -548,4 +548,8 @@ button#modale-favori {
   cursor: pointer;
   border: none;
   border-bottom: 1px solid #cb80007a;
+}
+#modale-ajouter-planning:hover {
+  background-color: #398958;
+  cursor: pointer;
 }

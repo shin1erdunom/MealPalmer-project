@@ -1,4 +1,4 @@
-import { estFavori, toggleFavori } from "./storage.js";
+import { estFavori, toggleFavori, ajouterAuPlanning } from "./storage.js";
 
 const modale = document.getElementById("modale-recette");
 const modaleContenu = document.querySelector(".modale-contenu");
@@ -43,9 +43,17 @@ export function ouvrirModale(recette, elementDeclencheur) {
       : "img/heart_empty.png";
   };
 
-modale.hidden = false;
+  const boutonAjouterPlanning = document.getElementById("modale-ajouter-planning");
+  boutonAjouterPlanning.onclick = function () {
+    const jour = document.getElementById("modale-select-jour").value;
+    const repas = document.getElementById("modale-select-repas").value;
+    ajouterAuPlanning(jour, repas, recette.id);
+    fermerModale();
+  };
 
-fermerModaleBtn.focus();
+  modale.hidden = false;
+
+  fermerModaleBtn.focus();
 }
 
 function fermerModale() {
