@@ -11,3 +11,17 @@ async function main() {
 }
 
 main();
+
+const ajouterauPlanning = document.querySelector(".ajouter-au-planning");
+const Planning = document.querySelector(".Planning");
+const boutonsplus = document.querySelectorAll(".case:not(.remplie)");
+let jour = "";
+let repas = "";
+
+boutonsplus.forEach((boutonPlus) => {
+  boutonPlus.addEventListener("click", () => {
+    jour = boutonPlus.dataset.jour;
+    repas = boutonPlus.dataset.repas;
+    ajouterauPlanning.style.display = "block";
+  });
+});

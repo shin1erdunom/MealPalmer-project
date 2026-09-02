@@ -63,3 +63,14 @@ document.addEventListener("DOMContentLoaded", afficherPlanning);
 qyo commment dedisssaa^dfkss
 casekoi ca a c mm koi c encore quel malchance ca dems aaosqlddmzaammqiia
 appeidd,nnskkslaoseiokpq
+
+
+
+const ajouterauPlanning = document.querySelector(".ajouter-au-planning");
+const Planning = document.querySelector(".Planning");
+const boutonsplus = document.querySelectorAll(".case");
+boutonsplus.forEach((boutonPlus) => {
+  boutonPlus.addEventListener("click", () => {
+    ajouterauPlanning.style.display = "flex";
+  });
+});

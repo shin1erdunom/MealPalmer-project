@@ -119,6 +119,10 @@ h1 {
   color: #ffffff;
   padding: 0 20px;
 }
+.bouton button:hover {
+  background-color: #492402;
+  cursor: pointer;}
+
 .bouton button p {
   color: #ffffff;
   margin-left: 5px;

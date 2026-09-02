@@ -45,8 +45,8 @@ export function ouvrirModale(recette, elementDeclencheur) {
 
   const boutonAjouterPlanning = document.getElementById("modale-ajouter-planning");
   boutonAjouterPlanning.onclick = function () {
-    const jour = document.getElementById("modale-select-jour").value;
-    const repas = document.getElementById("modale-select-repas").value;
+    const jour = document.getElementById("jour-select").value;
+    const repas = document.getElementById("repas-select").value;
     ajouterAuPlanning(jour, repas, recette.id);
     fermerModale();
   };
