@@ -1,11 +1,11 @@
-import { getPlanning } from "./storage";
-import { chargerRecettes } from "./data.js";
+import { getPlanning } from "./storage.js";
+import { getRecettes } from "./data.js";
 
 export function afficherPlanning() {
   const planning = getPlanning();
   Object.keys(planning).forEach((key) => {
     const [jour, repas] = key.split("-");
-    const idRecette = planning[jour][repas];
+    const idRecette = planning[key];
     const recette = getRecettes().find((recette) => recette.id === idRecette);
     const caseElement = document.querySelector(
       `.case[data-jour="${jour}"][data-repas="${repas}"]`,
