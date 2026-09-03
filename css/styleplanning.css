@@ -61,7 +61,7 @@ body {
 .nav-principale ul {
   list-style: none;
   display: flex;
-  gap: 1.75rem;
+  gap: 2.25rem;
   margin: 0;
   padding: 0;
 }
@@ -80,8 +80,10 @@ body {
 .nav-principale .lien-actif {
   color: var(--couleur-primaire);
   font-weight: 700;
-  border-bottom-color: var(--couleur-primaire);
+  border-bottom: 2px solid var(--couleur-primaire);
+  padding-bottom: 8px;
 }
+
 
 .bouton-theme {
   background-color: rgb(250 247 255 / 10%);
@@ -121,7 +123,8 @@ h1 {
 }
 .bouton button:hover {
   background-color: #492402;
-  cursor: pointer;}
+  cursor: pointer;
+}
 
 .bouton button p {
   color: #ffffff;
@@ -207,6 +210,7 @@ h1 {
   align-items: center;
   justify-content: space-between;
   padding: 0 25px 5px;
+  border-bottom: 1px solid #dfe4ec;
 }
 .rechercher {
   display: flex;
@@ -275,22 +279,27 @@ footer {
   background-color: #e8f2ff75;
   padding: 50px 30px;
 }
-#end-meal{
+#end-meal {
   font-weight: 600;
   font-size: 1.3rem;
   color: #944a00;
 }
-.end-2{
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
+.end-2 {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
 }
-main{
-      padding: 1rem 1.5rem;
+main {
+  padding: 1rem 1.5rem;
 }
 .sr-only {
   position: absolute;
-  width: 1px; height: 1px;
+  width: 1px;
+  height: 1px;
   overflow: hidden;
-  clip: rect(0,0,0,0);
+  clip: rect(0, 0, 0, 0);
+}
+
+.add {
+  border-top: 1px solid #dfe4ec;
 }

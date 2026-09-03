@@ -25,3 +25,8 @@ boutonsplus.forEach((boutonPlus) => {
     ajouterauPlanning.style.display = "block";
   });
 });
+
+const fermerPlanning = document.getElementById("close-menu");
+fermerPlanning.addEventListener("click", () => {
+  ajouterauPlanning.style.display = "none";
+});

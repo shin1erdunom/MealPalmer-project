@@ -61,7 +61,7 @@ body {
 .nav-principale ul {
   list-style: none;
   display: flex;
-  gap: 1.75rem;
+  gap: 2.25rem;
   margin: 0;
   padding: 0;
 }
@@ -80,8 +80,10 @@ body {
 .nav-principale .lien-actif {
   color: var(--couleur-primaire);
   font-weight: 700;
-  border-bottom-color: var(--couleur-primaire);
+  border-bottom: 2px solid var(--couleur-primaire);
+  padding-bottom: 8px;
 }
+
 
 #bouton-account {
   background-color: rgb(250 247 255 / 10%);

@@ -24,8 +24,8 @@
   font-weight: 400;
   font-style: normal;
 }
-main{
-      padding: 1rem 1.5rem;
+main {
+  padding: 1rem 1.5rem;
 }
 ul,
 ol {
@@ -64,7 +64,7 @@ body {
 .nav-principale ul {
   list-style: none;
   display: flex;
-  gap: 1.75rem;
+  gap: 2.25rem;
   margin: 0;
   padding: 0;
 }
@@ -83,7 +83,9 @@ body {
 .nav-principale .lien-actif {
   color: var(--couleur-primaire);
   font-weight: 700;
-  border-bottom-color: var(--couleur-primaire);
+  border-bottom: 2px solid var(--couleur-primaire);
+  padding: 8px;
+  border-radius: 5px;
 }
 
 .bouton-theme {
@@ -99,39 +101,39 @@ body {
   justify-content: space-between;
   width: 100%;
 }
-.title{
-    line-height: .5;
+.title {
+  line-height: 0.5;
 }
-#search{
-        border: 0px transparent;
-    padding: 10px 10px 10px 25px;
-    background-color: #b1cab126;
+#search {
+  border: 0px transparent;
+  padding: 10px 10px 10px 25px;
+  background-color: #b1cab126;
 }
-.bouton-fav{
-    display: flex;
-    gap: .8em;
+.bouton-fav {
+  display: flex;
+  gap: 0.8em;
 }
-.bouton-fav button{
-        border: 1px solid #cb8000;
-    padding: 7px;
-    border-radius: 20px;
-    width: 8em;
-    font-weight: 600;
+.bouton-fav button {
+  border: 1px solid #cb8000;
+  padding: 7px;
+  border-radius: 20px;
+  width: 8em;
+  font-weight: 600;
 }
-main{
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
-.bouton-fav button:hover{
-    background-color: #cb8000;
-    color: #ffffff;
+.bouton-fav button:hover {
+  background-color: #cb8000;
+  color: #ffffff;
 }
-h1{
-    font-weight: 800;
-    color:#1a2540;
+h1 {
+  font-weight: 800;
+  color: #1a2540;
 }
-.bouton-actif{
-    background-color: #cb8000;
-    color: #ffffff;
+.bouton-actif {
+  background-color: #cb8000;
+  color: #ffffff;
 }
