@@ -5,7 +5,7 @@ import { ouvrirModale } from "./modale.js";
 let rechercheActuelle = "";
 let filtreActuel = "";
 
-function appliquerFiltres() {
+export function appliquerFiltres() {
   const recettesFiltrees = getRecettes().filter((recette) => {
     const correspondRecherche = recette.nom
       .toLowerCase()

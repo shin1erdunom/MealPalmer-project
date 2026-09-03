@@ -99,7 +99,8 @@
 
 
 
-  <div class="ajouter-au-planning">
+  <div class="ajouter-au-planning" hidden>
+    <div class="ajouter-au-planning-inner">
     <div class="header-2">
       <h2>Ajouter une recette au planning</h2>
       <button type="button" aria-label="fermer le menu ajouter au planning" id="close-menu">
@@ -107,6 +108,7 @@
       </button>
     </div>
     <div class="rechercher">
+      <div class="rechercher-recette-add">
       <label for="search-recette" class="sr-only">Rechercher une recette</label>
       <input type="text" name="search-recette" id="search-recette" placeholder="Rechercher une recette">
       <div class="filtre">
@@ -115,7 +117,9 @@
         <button type="button" id="vegetarien">Végétarien</button>
         <button type="button" id="rapide">Rapide</button>
         <button type="button" id="diner">Dîner</button>
-      </div>
+      </div></div>
+              <div id="aucun-resultat" aria-live="polite"></div>
+
       <div class="add"></div>
     </div>
     <div class="cancel">

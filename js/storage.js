@@ -19,8 +19,7 @@ export function toggleFavori(id) {
   localStorage.setItem("favoris", JSON.stringify(nouveauxFavoris));
 }
 
-
-export function getPlanning(){
+export function getPlanning() {
   return JSON.parse(localStorage.getItem("planning")) ?? {};
 }
 
