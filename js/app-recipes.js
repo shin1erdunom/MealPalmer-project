@@ -14,3 +14,12 @@ async function main() {
 }
 
 main();
+
+const boutonsFiltre = document.querySelectorAll(".bouton-search button");
+boutonsFiltre.forEach((boutonFiltre) => {
+  boutonFiltre.addEventListener("click", function () {
+    boutonsFiltre.forEach((btn) => btn.classList.remove("bouton-active"));
+    boutonFiltre.classList.add("bouton-active");
+
+});
+})

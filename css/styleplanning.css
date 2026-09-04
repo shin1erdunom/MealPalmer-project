@@ -402,3 +402,10 @@ main {
   justify-content: center;
   font-size: 1.5em;
 }
+button:hover {
+  cursor: pointer;
+}
+#cancel:hover {
+  background-color: #dedbdb;
+  cursor: pointer;
+}

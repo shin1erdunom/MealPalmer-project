@@ -310,7 +310,7 @@ h1 {
   color: white;
   border: 1px solid #944a00;
 }
-#tout.bouton-active {
+button.bouton-active {
   background-color: #944a00;
   color: white;
   border: 1px solid #944a00;
