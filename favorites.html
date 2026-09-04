@@ -39,18 +39,19 @@
     <p>Your personal collection of go-to meals and culinary inspirations.</p>
 </div>
 <div class="search-title">
-    <input type="text" name="search" id="search" placeholder="Search favorites...">
+    <input type="text" name="search" id="search-favoris" placeholder="Search favorites...">
 </div>
 </div>
 <div class="bouton-fav">
     <button type="button" id="all-recipes" aria-pressed="true" class="bouton-actif">All Recipes</button>
-    <button type="button" id="breakfast" aria-pressed="false">Breakfast</button>
-    <button type="button" id="vegetarien" aria-pressed="false">Vegetarian</button>
-    <button type="button" id="quick" aria-pressed="false">Quick & Easy</button>
-    <button type="button" id="dinner" aria-pressed="false">Dinner</button>
-    <button type="button" id="deserts" aria-pressed="false">Desserts</button>
+    <button type="button" id="breakfast" aria-pressed="false" data-filtre="Petit-déjeuner">Breakfast</button>
+    <button type="button" id="vegetarien" aria-pressed="false" data-filtre="vegetarien">Vegetarian</button>
+    <button type="button" id="quick" aria-pressed="false" data-filtre="rapide">Quick & Easy</button>
+    <button type="button" id="dinner" aria-pressed="false" data-filtre="dinner">Dinner</button>
+    <button type="button" id="deserts" aria-pressed="false" data-filtre="desserts">Desserts</button>
 </div>
-<div class="recettes"></div>
+<div id="recipe-card"></div>
   </main>
+  <script src="js/app-favoris.js" type="module"></script>
 </body>
 </html>

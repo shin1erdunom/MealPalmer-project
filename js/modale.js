@@ -4,6 +4,7 @@ const modale = document.getElementById("modale-recette");
 const modaleContenu = document.querySelector(".modale-contenu");
 const fermerModaleBtn = document.getElementById("fermer-modale");
 
+// On garde en mémoire l'élément qui a ouvert la modale, pour lui rendre le focus à la fermeture
 let dernierElementFocus = null;
 
 export function ouvrirModale(recette, elementDeclencheur) {
@@ -45,35 +46,40 @@ export function ouvrirModale(recette, elementDeclencheur) {
 
   const boutonAjouterPlanning = document.getElementById("modale-ajouter-planning");
   boutonAjouterPlanning.onclick = function () {
-    const jour = document.getElementById("jour-select").value;
-    const repas = document.getElementById("repas-select").value;
+    const jour = document.getElementById("modale-select-jour").value;
+    const repas = document.getElementById("modale-select-repas").value;
     ajouterAuPlanning(jour, repas, recette.id);
     fermerModale();
   };
 
   modale.hidden = false;
 
+  // Le focus part directement dans la modale à l'ouverture
   fermerModaleBtn.focus();
 }
 
 function fermerModale() {
   modale.hidden = true;
 
+  // Le focus revient sur la carte qui a ouvert la modale
   if (dernierElementFocus) {
     dernierElementFocus.focus();
   }
 }
 
-fermerModaleBtn.addEventListener("click", fermerModale);
+fermerModaleBtn?.addEventListener("click", fermerModale);
 
+// Fermeture avec la touche Échap
 document.addEventListener("keydown", function (evenement) {
-  if (evenement.key === "Escape" && !modale.hidden) {
-    fermerModale();
+  if (!modale || evenement.key !== "Escape" || modale.hidden) {
+    return;
   }
+  fermerModale();
 });
 
+// Focus trap : empêcher Tab de sortir de la modale
 document.addEventListener("keydown", function (evenement) {
-  if (evenement.key !== "Tab" || modale.hidden) {
+  if (!modale || evenement.key !== "Tab" || modale.hidden) {
     return;
   }
 
@@ -84,11 +90,13 @@ document.addEventListener("keydown", function (evenement) {
   const dernier = elementsFocusables[elementsFocusables.length - 1];
 
   if (evenement.shiftKey) {
+    // Shift+Tab en arrière : si on est sur le premier, on boucle vers le dernier
     if (document.activeElement === premier) {
       evenement.preventDefault();
       dernier.focus();
     }
   } else {
+    // Tab en avant : si on est sur le dernier, on boucle vers le premier
     if (document.activeElement === dernier) {
       evenement.preventDefault();
       premier.focus();

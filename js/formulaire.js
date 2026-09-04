@@ -1,158 +1,140 @@
-import { getRecettes } from "./data.js";
-import { afficherRecettes } from "./recettes.js";
-
+import { ajouterRecettePerso } from "./storage.js";
 
 const formulaireContainer = document.querySelector(".ajouter-une-recette");
-const conteneurIngredients = document.querySelector(".ingredients");
-const conteneurInstructions = document.querySelector(".instructions .etapes");
-const btnAddIngredient = document.getElementById("add-ingredient");
-const btnAddEtape = document.getElementById("add-etape");
-const btnSave = document.getElementById("save");
-const btnCancel = document.getElementById("cancel");
+const boutonAjouterRecette = document.getElementById("add-recipe");
+const boutonAnnuler = document.getElementById("cancel");
+const boutonEnregistrer = document.getElementById("save");
 
+const champTitre = document.getElementById("title");
+const messageErreurTitre = document.querySelector("#titre .message");
+const champCategorie = document.getElementById("categorie");
+const champOrigine = document.getElementById("origin");
+const champTemps = document.getElementById("time");
 
-function ajouterChampIngredient() {
-  const divIng = document.createElement("div");
-  divIng.classList.add("ing");
-  divIng.innerHTML = `
-    <div class="ingredientgrid">
-      <div>
-        <label>Ingrédient</label>
-        <input type="text" class="input-nom-ing" placeholder="ex: Farine">
-      </div>
-      <div>
-        <label>Quantité / Unité</label>
-        <input type="text" class="input-quantite-ing" placeholder="ex: 200g">
-      </div>
+const conteneurIngredients = document.querySelector(".ingredientgrid").parentElement;
+const boutonAjouterIngredient = document.getElementById("add-ingredient");
+
+const listeEtapes = document.querySelector(".etapes");
+const boutonAjouterEtape = document.getElementById("add-step");
+
+export function initialiserFormulaire() {
+  boutonAjouterRecette.addEventListener("click", ouvrirFormulaire);
+  boutonAnnuler.addEventListener("click", fermerFormulaire);
+  boutonAjouterIngredient.addEventListener("click", ajouterLigneIngredient);
+  boutonAjouterEtape.addEventListener("click", ajouterLigneEtape);
+  boutonEnregistrer.addEventListener("click", validerEtEnregistrer);
+}
+
+function ouvrirFormulaire() {
+  formulaireContainer.style.display = "block";
+}
+
+function fermerFormulaire() {
+  formulaireContainer.style.display = "none";
+}
+
+// ===== Ajout dynamique d'une ligne d'ingrédient =====
+function ajouterLigneIngredient() {
+  const nombreLignes = document.querySelectorAll('[name="name-ingredient"]').length + 1;
+
+  const champNom = document.createElement("input");
+  champNom.type = "text";
+  champNom.name = "name-ingredient";
+  champNom.placeholder = "Ex: Pommes de terre";
+
+  const champQuantite = document.createElement("input");
+  champQuantite.type = "text";
+  champQuantite.name = "quantity";
+  champQuantite.placeholder = "Ex: 1kg";
+
+  document.getElementById("Name-ingredient").appendChild(champNom);
+  document.getElementById("quantite").appendChild(champQuantite);
+}
+
+// ===== Ajout dynamique d'une étape =====
+function ajouterLigneEtape() {
+  const numero = listeEtapes.querySelectorAll("li").length + 1;
+
+  const item = document.createElement("li");
+  item.innerHTML = `
+    <div class="step-text">
+      <span>${numero}</span>
+      <p>Etape</p>
     </div>
-    <div class="trash">
-      <button type="button" class="btn-supprimer-ing">
-        <img src="img/icon_trash.png" alt="Supprimer">
-      </button>
-    </div>
+    <textarea placeholder="Décrivez l'étape ici"></textarea>
   `;
+  listeEtapes.appendChild(item);
+}
 
+// ===== Validation + enregistrement =====
+function validerEtEnregistrer() {
+  let formulaireValide = true;
 
-  divIng.querySelector(".btn-supprimer-ing").addEventListener("click", () => {
-    divIng.remove();
+  // Titre obligatoire
+  if (champTitre.value.trim() === "") {
+    messageErreurTitre.style.display = "flex";
+    champTitre.setAttribute("aria-describedby", "erreur-titre");
+    formulaireValide = false;
+  } else {
+    messageErreurTitre.style.display = "none";
+    champTitre.removeAttribute("aria-describedby");
+  }
+
+  // Temps de préparation positif
+  const temps = Number(champTemps.value);
+  if (isNaN(temps) || temps <= 0) {
+    formulaireValide = false;
+  }
+
+  // Ingrédients : au moins 1 avec nom ET quantité
+  const nomsIngredients = document.querySelectorAll('[name="name-ingredient"]');
+  const quantitesIngredients = document.querySelectorAll('[name="quantity"]');
+  const ingredients = [];
+
+  nomsIngredients.forEach((champ, index) => {
+    const nom = champ.value.trim();
+    const quantite = quantitesIngredients[index].value.trim();
+    if (nom !== "" && quantite !== "") {
+      ingredients.push({ nom, quantite, unite: "" });
+    }
   });
 
-  conteneurIngredients.appendChild(divIng);
-}
+  if (ingredients.length === 0) {
+    formulaireValide = false;
+  }
 
+  // Instructions : au moins 1 étape remplie
+  const champsEtapes = listeEtapes.querySelectorAll("textarea");
+  const instructions = [];
 
-function ajouterChampInstruction() {
-  const nombreEtapes = conteneurInstructions.querySelectorAll("li").length + 1;
-  const liEtape = document.createElement("li");
-  liEtape.innerHTML = `
-    <div class="step-text">
-      <span>${nombreEtapes}</span>
-      <p>Étape ${nombreEtapes}</p>
-    </div>
-    <textarea class="input-instruction" placeholder="Décrivez l'étape..."></textarea>
-  `;
+  champsEtapes.forEach((champ) => {
+    const texte = champ.value.trim();
+    if (texte !== "") {
+      instructions.push(texte);
+    }
+  });
 
-  conteneurInstructions.appendChild(liEtape);
-}
+  if (instructions.length === 0) {
+    formulaireValide = false;
+  }
 
-
-function reinitialiserFormulaire() {
-  document.getElementById("input-titre").value = "";
-  document.getElementById("input-categorie").value = "";
-  document.getElementById("input-origine").value = "";
-  document.getElementById("input-temps").value = "";
-
-
-  conteneurIngredients.innerHTML = "";
-  ajouterChampIngredient();
-
-
-  conteneurInstructions.innerHTML = "";
-  ajouterChampInstruction();
-}
-
-
-function enregistrerRecette() {
-  const nom = document.getElementById("input-titre")?.value.trim();
-  const categorie = document.getElementById("input-categorie")?.value.trim();
-  const origine = document.getElementById("input-origine")?.value.trim();
-  const tempsPreparation = parseInt(document.getElementById("input-temps")?.value, 10);
-
-
-  if (!nom || !categorie || isNaN(tempsPreparation)) {
-    alert("Veuillez remplir au moins le titre, la catégorie et le temps de préparation.");
+  if (!formulaireValide) {
     return;
   }
 
-
-  const ingredients = [];
-  const lignesIngredients = conteneurIngredients.querySelectorAll(".ing");
-  lignesIngredients.forEach((ligne) => {
-    const nomIng = ligne.querySelector(".input-nom-ing")?.value.trim();
-    const quantiteIng = ligne.querySelector(".input-quantite-ing")?.value.trim();
-
-    if (nomIng) {
-      ingredients.push({
-        nom: nomIng,
-        quantite: quantiteIng || "",
-        unite: ""
-      });
-    }
-  });
-
-
-  const instructions = [];
-  const champsInstructions = conteneurInstructions.querySelectorAll(".input-instruction");
-  champsInstructions.forEach((champ) => {
-    const texteEtape = champ.value.trim();
-    if (texteEtape) {
-      instructions.push(texteEtape);
-    }
-  });
-
-
+  // Construction et sauvegarde de la recette
   const nouvelleRecette = {
-    id: Date.now().toString(),
-    nom: nom,
-    categorie: categorie,
-    origine: origine || "Autre",
-    tempsPreparation: tempsPreparation,
-    image: "img/default_recipe.jpg",
+    id: Date.now(), // identifiant unique basé sur l'horodatage
+    nom: champTitre.value.trim(),
+    categorie: champCategorie.value.trim(),
+    origine: champOrigine.value.trim(),
+    image: "",
+    tempsPreparation: temps,
     ingredients: ingredients,
-    instructions: instructions
+    instructions: instructions,
   };
 
-  const recettes = getRecettes();
-  recettes.push(nouvelleRecette);
-
-  afficherRecettes(recettes);
-
-  if (formulaireContainer) {
-    formulaireContainer.style.display = "none";
-  }
-  reinitialiserFormulaire();
-}
-
-if (btnAddIngredient) {
-  btnAddIngredient.addEventListener("click", ajouterChampIngredient);
-}
-
-if (btnAddEtape) {
-  btnAddEtape.addEventListener("click", ajouterChampInstruction);
-}
-
-if (btnSave) {
-  btnSave.addEventListener("click", (e) => {
-    e.preventDefault();
-    enregistrerRecette();
-  });
-}
-
-if (btnCancel) {
-  btnCancel.addEventListener("click", () => {
-    if (formulaireContainer) {
-      formulaireContainer.style.display = "none";
-    }
-    reinitialiserFormulaire();
-  });
+  ajouterRecettePerso(nouvelleRecette);
+  fermerFormulaire();
+  window.location.reload();
 }

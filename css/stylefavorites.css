@@ -137,3 +137,81 @@ h1 {
   background-color: #cb8000;
   color: #ffffff;
 }
+
+#recettes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 24px;
+  margin: 10px 0 30px;
+}
+
+.img-card {
+  background-color: var(--couleur-fond-carte);
+  border-radius: var(--rayon-carte);
+  box-shadow: var(--ombre-carte);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.img-card img:not(.bouton-favori):not(.text-time img) {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.img-card:hover {
+  cursor: pointer;
+}
+
+.img-card span {
+  align-self: flex-start;
+  margin: 12px 0 0 16px;
+  padding: 4px 12px;
+  border-radius: var(--rayon-pastille);
+  background-color: #e8f2ff;
+  color: var(--couleur-primaire);
+  font-size: 0.75rem;
+  font-weight: 600;
+  position: relative;
+  bottom: 4em;
+}
+
+.img-card h3 {
+  margin: -20px 16px 6px;
+  font-size: 2rem;
+  color: var(--couleur-texte);
+  font-weight: 600;
+}
+
+.img-card p {
+  color: #4f2500;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-left: 3px;
+}
+.text-time {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px 15px 0px;
+  margin-top: auto;
+}
+.text-time img {
+  height: 0.9rem;
+}
+
+/* ===== Positionnement du bouton favori sur l'image ===== */
+.bouton-favori {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  height: 40px;
+  width: 40px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  padding: 6px;
+  box-shadow: var(--ombre-carte);
+  cursor: pointer;
+}
