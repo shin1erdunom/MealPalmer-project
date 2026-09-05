@@ -1,4 +1,3 @@
-// data.js — chargement, cache et fusion avec les recettes perso
 
 import { getRecettesPerso } from "./storage.js";
 
@@ -26,10 +25,7 @@ export async function chargerRecettes() {
   }
 }
 
-/**
- * Retourne les recettes du JSON déjà chargées, fusionnées avec les
- * recettes personnelles enregistrées par l'utilisateur.
- */
+
 export function getRecettes() {
   const recettesJSON = recettesEnCache ?? [];
   return [...recettesJSON, ...getRecettesPerso()];

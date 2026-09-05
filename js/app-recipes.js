@@ -1,12 +1,17 @@
 import { chargerRecettes } from "./data.js";
-import { afficherRecettes } from "./recettes.js";
 import { initialiserFormulaire } from "./formulaire.js";
-import { getRecettesPerso } from "./storage.js";
+import {
+  afficherMesRecettesFiltrees,
+  initialiserRechercheMesRecettes,
+  initialiserFiltresMesRecettes,
+} from "./mes-recettes.js";
 
 async function main() {
   try {
     await chargerRecettes();
-    afficherRecettes(getRecettesPerso());
+    afficherMesRecettesFiltrees();
+    initialiserRechercheMesRecettes();
+    initialiserFiltresMesRecettes();
     initialiserFormulaire();
   } catch (erreur) {
     console.error("Erreur lors du chargement de mes recettes :", erreur);

@@ -7,7 +7,6 @@ const listeAjout = document.querySelector(".add");
 const closeMenuBtn = document.getElementById("close-menu");
 const cancelBtn = document.getElementById("cancel");
 
-// "Post-it" pour mémoriser la case actuellement sélectionnée
 let jour = "";
 let repas = "";
 
@@ -45,7 +44,6 @@ function fermerPanneauAjout() {
 }
 
 export function initialiserPanneauAjout() {
-  // Ouvrir le panneau au clic sur une case vide
   boutonsplus.forEach((boutonPlus) => {
     boutonPlus.addEventListener("click", () => {
       jour = boutonPlus.dataset.jour;
@@ -55,11 +53,9 @@ export function initialiserPanneauAjout() {
     });
   });
 
-  // Fermer le panneau
   closeMenuBtn.addEventListener("click", fermerPanneauAjout);
   cancelBtn.addEventListener("click", fermerPanneauAjout);
 
-  // Construire la liste des recettes disponibles, une seule fois
   listeAjout.innerHTML = "";
   getRecettes().forEach((recette) => {
     const item = document.createElement("div");

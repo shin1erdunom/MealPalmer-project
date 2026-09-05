@@ -42,20 +42,21 @@
         <button type="button" id="add-recipe"> + Ajouter une recette </button>
     </div>
     <div class="search-recette">
-        <input type="text" name="search" id="search" placeholder="Rechercher dans mes recettes...">
+        <input type="text" name="search" id="search-mes-recettes" placeholder="Rechercher dans mes recettes...">
         <div class="bouton-search">
         <button type="button" id="tout" aria-pressed="true" class="bouton-active">Tout</button>
-        <button type="button" id="plats-principaux" aria-pressed="false">Plats Principaux</button>
-        <button type="button" id="desserts" aria-pressed="false">Desserts</button>
-        <button type="button" id="vegetarien" aria-pressed="false">Végétarien</button>
-    </div>
+        <button type="button" id="plats-principaux" aria-pressed="false" data-filtre="Plat principal">Plats Principaux</button>
+        <button type="button" id="desserts" aria-pressed="false" data-filtre="Dessert">Desserts</button>
+        <button type="button" id="vegetarien" aria-pressed="false" data-filtre="Vegetarienne">Végétarien</button>
     </div>
     </div>
     <div id="recipe-card"></div>
+    </div>
+    
 
     
     <div class="ajouter-une-recette">
-        <div class="add-une-recette">
+        
     <div class="header">
         <h2>Ajouter une nouvelle recette</h2>
         <p>Partager votre creation culinaire avec votre famille</p>
@@ -139,7 +140,6 @@
             <button type="button" id="save" aria-pressed="false">Enregistrer la recette</button>
         </div>
     </div>
-</div>
 </div>
   </main>
   <footer>

@@ -1,7 +1,6 @@
-import { getPlanning, getArticlesCoches, toggleArticleCoche } from "./storage.js";
+import { getPlanning, getArticlesCoches, toggleArticleCoche, reinitialiserArticlesCoches } from "./storage.js";
 import { getRecettes } from "./data.js";
 
-// Dictionnaire ingrédient -> rayon (complété à partir des ingrédients de recettes.json)
 const RAYONS = {
   Poulet: "Viandes",
   Boeuf: "Viandes",
@@ -46,11 +45,7 @@ function trouverRayon(nomIngredient) {
   return RAYONS[nomIngredient] ?? "Autres";
 }
 
-/**
- * Fusionne les ingrédients identiques (même nom ET même unité) en additionnant
- * leurs quantités. Deux mêmes ingrédients avec des unités différentes
- * (ex: "200 g" et "1 kg") restent sur des lignes séparées — voir README.
- */
+
 function fusionnerIngredients(ingredients) {
   const fusion = {};
 
@@ -60,8 +55,7 @@ function fusionnerIngredients(ingredients) {
     if (fusion[cle]) {
       fusion[cle].quantite += ingredient.quantite;
     } else {
-      // On copie l'objet (spread) pour ne jamais modifier les données
-      // originales mises en cache dans data.js
+
       fusion[cle] = { ...ingredient };
     }
   });
@@ -69,10 +63,7 @@ function fusionnerIngredients(ingredients) {
   return Object.values(fusion);
 }
 
-/**
- * Regroupe une liste d'ingrédients fusionnés par rayon, à partir du
- * dictionnaire RAYONS.
- */
+
 function regrouperParRayon(ingredientsFusionnes) {
   const rayons = {};
 
@@ -87,9 +78,7 @@ function regrouperParRayon(ingredientsFusionnes) {
   return rayons;
 }
 
-/**
- * Construit la liste de courses complète à partir du planning actuel.
- */
+
 export function genererListeCourses() {
   const planning = getPlanning();
 
@@ -106,10 +95,7 @@ export function genererListeCourses() {
   return regrouperParRayon(ingredientsFusionnes);
 }
 
-/**
- * Affiche la liste de courses regroupée par rayon dans le DOM,
- * avec des cases à cocher persistées dans localStorage.
- */
+
 export function afficherListeCourses() {
   const rayons = genererListeCourses();
   const conteneur = document.getElementById("liste-courses");
@@ -144,7 +130,7 @@ export function afficherListeCourses() {
       const checkbox = item.querySelector("input");
       checkbox.addEventListener("change", function () {
         toggleArticleCoche(cleArticle);
-        afficherListeCourses(); // on rafraîchit tout pour recalculer la progression
+        afficherListeCourses();
       });
 
       liste.appendChild(item);
@@ -160,4 +146,12 @@ export function afficherListeCourses() {
   const barreProgression = document.getElementById("barre-de-progression");
   const pourcentage = totalArticles === 0 ? 0 : (totalCoches / totalArticles) * 100;
   barreProgression.style.width = `${pourcentage}%`;
+}
+
+export function initialiserBoutonReset() {
+  const boutonReset = document.getElementById("reset");
+  boutonReset?.addEventListener("click", function () {
+    reinitialiserArticlesCoches();
+    afficherListeCourses();
+  });
 }

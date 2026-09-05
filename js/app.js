@@ -51,6 +51,13 @@ function mettreAJourStatistiques() {
   vegetarien.style.width = `${pourcentageVegetarien}%`;
   rapide.style.width = `${pourcentageRapide}%`;
   autres.style.width = `${pourcentageAutres}%`;
+
+  document.querySelector("#it-stat").textContent = `${pourcentageItalien}%`
+    document.querySelector("#ve-stat").textContent = `${pourcentageVegetarien}%`
+  document.querySelector("#ra-stat").textContent = `${pourcentageRapide}%`
+  document.querySelector("#au-stat").textContent = `${pourcentageAutres}%`
+
+
 }
 
 main();

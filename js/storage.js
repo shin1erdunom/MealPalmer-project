@@ -1,6 +1,4 @@
-// storage.js — wrapper autour de localStorage (favoris + planning)
 
-// ===== Favoris =====
 export function getFavoris() {
   return JSON.parse(localStorage.getItem("favoris")) ?? [];
 }
@@ -22,7 +20,6 @@ export function toggleFavori(id) {
   localStorage.setItem("favoris", JSON.stringify(nouveauxFavoris));
 }
 
-// ===== Planning =====
 export function getPlanning() {
   return JSON.parse(localStorage.getItem("planning")) ?? {};
 }
@@ -45,7 +42,6 @@ export function retirerPlanning(jour, repas) {
   sauvegarderPlanning(planning);
 }
 
-// ===== Liste de courses (articles cochés) =====
 export function getArticlesCoches() {
   return JSON.parse(localStorage.getItem("articlesCoches")) ?? [];
 }
@@ -63,7 +59,10 @@ export function toggleArticleCoche(cleArticle) {
   localStorage.setItem("articlesCoches", JSON.stringify(nouveauxArticles));
 }
 
-// ===== Recettes personnelles =====
+export function reinitialiserArticlesCoches() {
+  localStorage.setItem("articlesCoches", JSON.stringify([]));
+}
+
 export function getRecettesPerso() {
   return JSON.parse(localStorage.getItem("recettesPerso")) ?? [];
 }

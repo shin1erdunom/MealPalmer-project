@@ -266,12 +266,6 @@ li textarea {
 
 .ajouter-une-recette {
   display: none;
-    position: fixed;
-  inset: 0;
-  background-color: #4e6073f1;
-  align-items: center;
-  justify-content: center;
-  z-index: 100;
 }
 
 h1 {
@@ -354,7 +348,6 @@ footer {
   gap: 20px;
 }
 
-/* ===== Grille des cartes de recettes ===== */
 #recipe-card {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -362,7 +355,6 @@ footer {
   margin: 10px 0 30px;
 }
 
-/* ===== Carte individuelle ===== */
 .img-card {
   background-color: var(--couleur-fond-carte);
   border-radius: var(--rayon-carte);
@@ -420,7 +412,6 @@ footer {
   height: 0.9rem;
 }
 
-/* ===== Positionnement du bouton favori sur l'image ===== */
 .bouton-favori {
   position: absolute;
   top: 12px;
@@ -434,7 +425,6 @@ footer {
   cursor: pointer;
 }
 
-/* ===== Modale de détail recette ===== */
 .modale {
   position: fixed;
   inset: 0;
@@ -477,7 +467,6 @@ footer {
   border-radius: var(--rayon-carte);
 }
 
-/* ===== Nouvelle modale (design fidèle à la maquette) ===== */
 .modale-contenu {
   padding: 0;
 }
@@ -668,4 +657,19 @@ button#modale-favori {
   align-items: center;
   justify-content: center;
   font-size: 1.5em;
+}
+
+button:hover{
+  cursor: pointer;
+}
+
+#cancel:hover{
+  background-color: #bdbdbd36;
+}
+#save:hover, #add-recipe:hover{
+  background-color: #4f2500;
+}
+
+.header{
+  padding: 0 0 30px;
 }

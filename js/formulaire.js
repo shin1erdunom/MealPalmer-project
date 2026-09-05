@@ -1,6 +1,8 @@
 import { ajouterRecettePerso } from "./storage.js";
 
 const formulaireContainer = document.querySelector(".ajouter-une-recette");
+const recetteCard = document.querySelector(".recette");
+
 const boutonAjouterRecette = document.getElementById("add-recipe");
 const boutonAnnuler = document.getElementById("cancel");
 const boutonEnregistrer = document.getElementById("save");
@@ -11,7 +13,8 @@ const champCategorie = document.getElementById("categorie");
 const champOrigine = document.getElementById("origin");
 const champTemps = document.getElementById("time");
 
-const conteneurIngredients = document.querySelector(".ingredientgrid").parentElement;
+const conteneurIngredients =
+  document.querySelector(".ingredientgrid").parentElement;
 const boutonAjouterIngredient = document.getElementById("add-ingredient");
 
 const listeEtapes = document.querySelector(".etapes");
@@ -27,15 +30,17 @@ export function initialiserFormulaire() {
 
 function ouvrirFormulaire() {
   formulaireContainer.style.display = "block";
+  recetteCard.style.display = "none";
 }
 
 function fermerFormulaire() {
   formulaireContainer.style.display = "none";
+  recetteCard.style.display = "flex";
 }
 
-// ===== Ajout dynamique d'une ligne d'ingrédient =====
 function ajouterLigneIngredient() {
-  const nombreLignes = document.querySelectorAll('[name="name-ingredient"]').length + 1;
+  const nombreLignes =
+    document.querySelectorAll('[name="name-ingredient"]').length + 1;
 
   const champNom = document.createElement("input");
   champNom.type = "text";
@@ -51,7 +56,6 @@ function ajouterLigneIngredient() {
   document.getElementById("quantite").appendChild(champQuantite);
 }
 
-// ===== Ajout dynamique d'une étape =====
 function ajouterLigneEtape() {
   const numero = listeEtapes.querySelectorAll("li").length + 1;
 
@@ -66,11 +70,9 @@ function ajouterLigneEtape() {
   listeEtapes.appendChild(item);
 }
 
-// ===== Validation + enregistrement =====
 function validerEtEnregistrer() {
   let formulaireValide = true;
 
-  // Titre obligatoire
   if (champTitre.value.trim() === "") {
     messageErreurTitre.style.display = "flex";
     champTitre.setAttribute("aria-describedby", "erreur-titre");
@@ -80,13 +82,11 @@ function validerEtEnregistrer() {
     champTitre.removeAttribute("aria-describedby");
   }
 
-  // Temps de préparation positif
   const temps = Number(champTemps.value);
   if (isNaN(temps) || temps <= 0) {
     formulaireValide = false;
   }
 
-  // Ingrédients : au moins 1 avec nom ET quantité
   const nomsIngredients = document.querySelectorAll('[name="name-ingredient"]');
   const quantitesIngredients = document.querySelectorAll('[name="quantity"]');
   const ingredients = [];
@@ -103,7 +103,6 @@ function validerEtEnregistrer() {
     formulaireValide = false;
   }
 
-  // Instructions : au moins 1 étape remplie
   const champsEtapes = listeEtapes.querySelectorAll("textarea");
   const instructions = [];
 
@@ -122,9 +121,8 @@ function validerEtEnregistrer() {
     return;
   }
 
-  // Construction et sauvegarde de la recette
   const nouvelleRecette = {
-    id: Date.now(), // identifiant unique basé sur l'horodatage
+    id: Date.now(),
     nom: champTitre.value.trim(),
     categorie: champCategorie.value.trim(),
     origine: champOrigine.value.trim(),

@@ -121,6 +121,7 @@ body {
   background-color: #e8f2ff;
   border-radius: 20px;
   border: 1px solid #cb8000;
+  font-weight: 600;
 }
 #filtre .filter-active {
   background-color: #b95f00;
@@ -586,4 +587,22 @@ button#modale-favori {
   background-color: #ffddb9;
   height: 10px;
   border-radius: 5px;
+}
+
+.categorie-text{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+.categorie-text p{
+    font-weight: 600;
+}
+
+main h2{
+  color: #333;
+  font-weight: 700;
+}
+.card-table-text p{
+  font-weight: 600;
 }
