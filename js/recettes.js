@@ -46,7 +46,7 @@ export function afficherRecettes(recettes, rafraichir) {
     const carte = document.createElement("div");
     carte.classList.add("img-card");
     carte.innerHTML = `<img src="${recette.image}" alt="image de ${recette.nom}">
-                        <img src="${estFavori(recette.id) ? 'img/heart_filled.png' : 'img/heart_empty.png'}" alt="favoris" class="bouton-favori">
+                        <img src="${estFavori(recette.id) ? "img/heart_filled.png" : "img/heart_empty.png"}" alt="favoris" class="bouton-favori">
                         <span>${recette.categorie}</span>
                         <h3>${recette.nom}</h3>
                         <p>${recette.tempsPreparation} min</p>`;
